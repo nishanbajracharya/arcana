@@ -1,0 +1,11 @@
+.pub-subnet-icon-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pub-subnet-icon-text {
+  font-size: 10px;
+  margin-right: 0;
+  padding-right: 0;
+}
