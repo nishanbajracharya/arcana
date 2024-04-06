@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server';
 import easyDB from "easy-db-node";
 import { NextApiRequest } from 'next';
 import { useParams } from 'next/navigation';
+import GenAI from '../genAi';
 const { select, update, remove } = easyDB({});
 
 export async function GET (
@@ -16,10 +17,12 @@ export async function PUT (
 ) {
     const {orch, nodeId, nodeData} = await req.json();
     await update('orchestras', params.id, orch);
+    const genAi = new GenAI();
+    const terraformScript = await genAi.generateTerraform(nodeData);
     await update('terraforms', nodeId, {
         id: nodeId,
         orchId: orch.id,
-        data: nodeData,
+        data: terraformScript,
       })
     return Response.json(orch);
 }

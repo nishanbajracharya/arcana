@@ -1,5 +1,4 @@
 import { NextRequest } from 'next/server';
-import GenAI from './genAi';
 import TerraformBuilder from './terraform/terraformBuilder';
 
 export async function POST(
@@ -11,8 +10,6 @@ export async function POST(
   const terraformBuilder = new TerraformBuilder(data);
   await terraformBuilder.createBaseRepo();
 
-  // const genAi = new GenAI();
-  // const terraformData = genAi.generateTerraform()
   try {
     
     return Response.json({status: 'ok'})

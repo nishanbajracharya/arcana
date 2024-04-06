@@ -13,7 +13,7 @@ class GenAI {
       "format": "json",
     })
 
-    return response.data;
+    return JSON.parse(response.data.response);
 
   }
 }
