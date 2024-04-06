@@ -15,7 +15,8 @@
     "react-aws-icons": "^1.2.1",
     "react-dom": "^18",
     "react-konva": "^18.2.10",
-    "react-konva-utils": "^1.0.6"
+    "react-konva-utils": "^1.0.6",
+    "react-icons": "^5.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

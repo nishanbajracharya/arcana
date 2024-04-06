@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Stage, Layer, Line } from 'react-konva';
 import { KonvaEventObject } from 'konva/lib/Node';
 
-import './home.css';
+import './diagram.css';
 
 import ServicePane from '../../components/ServicePane';
 import NodeFactory from '../../components/NodeFactory';
