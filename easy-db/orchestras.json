@@ -3029,5 +3029,253 @@
 			}
 		],
 		"id": "VhNoatg2AuEG"
+	},
+	"gLeMSbYrLy8L": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "8AYU8oAz",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				},
+				"data": [
+					{
+						"name": "source",
+						"value": "terraform-aws-modules/vpc/aws"
+					},
+					{
+						"name": "region",
+						"componentType": "text",
+						"label": "Region",
+						"defaultValue": "",
+						"required": false,
+						"value": "us-east-1"
+					},
+					{
+						"name": "azs",
+						"componentType": "text",
+						"label": "Availability Zone",
+						"defaultValue": "",
+						"required": false,
+						"isArray": true,
+						"value": [
+							"us-east-1a",
+							"us-east-1b"
+						]
+					},
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-first"
+					},
+					{
+						"name": "cidr",
+						"componentType": "text",
+						"label": "CIDR Block",
+						"defaultValue": "",
+						"required": false,
+						"value": "10.0.0.0/16"
+					},
+					{
+						"name": "private_subnets",
+						"componentType": "text",
+						"label": "Public Subnet",
+						"defaultValue": "",
+						"required": false,
+						"isArray": true,
+						"value": [
+							"10.1.0.0/24"
+						]
+					},
+					{
+						"name": "public_subnets",
+						"componentType": "text",
+						"label": "Private Subnet",
+						"defaultValue": "",
+						"required": false,
+						"isArray": true,
+						"value": [
+							"10.2.0.0/24"
+						]
+					},
+					{
+						"name": "enable_nat_gateway",
+						"componentType": "checkbox",
+						"label": "Enable Nat Gateway",
+						"defaultValue": "",
+						"required": false,
+						"value": ""
+					},
+					{
+						"name": "enable_vpn_gateway",
+						"componentType": "checkbox",
+						"label": "Enable VPN Gateway",
+						"defaultValue": "",
+						"required": false,
+						"value": ""
+					}
+				]
+			}
+		]
+	},
+	"bPt5PpC5rbxl": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "8AYU8oAz",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				},
+				"data": [
+					{
+						"name": "source",
+						"value": "terraform-aws-modules/vpc/aws"
+					},
+					{
+						"name": "region",
+						"componentType": "text",
+						"label": "Region",
+						"defaultValue": "",
+						"required": false,
+						"value": "us-east-1"
+					},
+					{
+						"name": "azs",
+						"componentType": "text",
+						"label": "Availability Zone",
+						"defaultValue": "",
+						"required": false,
+						"isArray": true,
+						"value": [
+							"us-east-1a",
+							"us-east-1b"
+						]
+					},
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-first"
+					},
+					{
+						"name": "cidr",
+						"componentType": "text",
+						"label": "CIDR Block",
+						"defaultValue": "",
+						"required": false,
+						"value": "10.0.0.0/16"
+					},
+					{
+						"name": "private_subnets",
+						"componentType": "text",
+						"label": "Public Subnet",
+						"defaultValue": "",
+						"required": false,
+						"isArray": true,
+						"value": [
+							"10.1.0.0/24"
+						]
+					},
+					{
+						"name": "public_subnets",
+						"componentType": "text",
+						"label": "Private Subnet",
+						"defaultValue": "",
+						"required": false,
+						"isArray": true,
+						"value": [
+							"10.2.0.0/24"
+						]
+					},
+					{
+						"name": "enable_nat_gateway",
+						"componentType": "checkbox",
+						"label": "Enable Nat Gateway",
+						"defaultValue": "",
+						"required": false,
+						"value": ""
+					},
+					{
+						"name": "enable_vpn_gateway",
+						"componentType": "checkbox",
+						"label": "Enable VPN Gateway",
+						"defaultValue": "",
+						"required": false,
+						"value": ""
+					}
+				]
+			},
+			{
+				"id": "GaKKksTI",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "source",
+						"value": "terraform-aws-modules/ec2-instance/aws"
+					},
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-instance"
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false
+					},
+					{
+						"name": "instance_type",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"options": [
+							{
+								"value": "t2.micro",
+								"label": "t2.micro"
+							},
+							{
+								"value": "t2.small",
+								"label": "t2.small"
+							}
+						],
+						"value": "t2-micro"
+					}
+				]
+			}
+		]
 	}
 }

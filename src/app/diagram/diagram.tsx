@@ -304,7 +304,9 @@ useEffect(() => {
                 <Button color="danger" variant="light" onPress={() => setPreview(false)} className="mr-auto">
                   <span>Cancel</span>
                 </Button>
-                <Button color="primary" variant="light" onPress={() => setPreview(false)} className="border-primary">
+                <Button color="primary" variant="light" onPress={async () => {setPreview(false)
+                  await axios.post('http://127.0.0.1:11434/api/download')
+                }} className="border-primary">
                   <IoMdDownload /> <span>Download</span>
                 </Button>
                 <Button color="primary" onPress={() => setPreview(false)}>
