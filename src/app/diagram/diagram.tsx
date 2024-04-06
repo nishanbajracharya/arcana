@@ -2,15 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { Stage, Layer, Line } from 'react-konva';
 import { KonvaEventObject } from 'konva/lib/Node';
 
+import { Button } from '@nextui-org/button';
+import { IoIosArrowBack } from 'react-icons/io';
+
 import './diagram.css';
 
 import ServicePane from '../../components/ServicePane';
 import NodeFactory from '../../components/NodeFactory';
 import { generateRandomString } from '../../utils/utils';
 import { Node } from '@/types';
+import { Link } from '@nextui-org/link';
 // import axios from 'axios';
 
-const HEIGHT = window.innerHeight;
+const HEIGHT = window.innerHeight - 48;
 const WIDTH = window.innerWidth - 360;
 
 const App = () => {
@@ -76,22 +80,36 @@ const App = () => {
   };
 
   return (
-    <div className="container-app">
-      <ServicePane onClick={handleServiceClick} />
-      <Stage height={HEIGHT} width={WIDTH}>
-        <Layer>
-          {grid}
-          {nodes.map((node, key) => (
-            <NodeFactory
-              key={key}
-              node={node}
-              onDragEnd={(e) => {
-                handleNodeDragEnd(node, e);
-              }}
-            />
-          ))}
-        </Layer>
-      </Stage>
+    <div>
+      <header className="h-[48px] bg-[#efeff7] border-b-[1px] border-b-[#ddd] flex leading-[48px] px-[16px] justify-between">
+        <div>
+          <Link href="/">
+            <Button variant="faded">
+              <IoIosArrowBack />
+              <span>Back</span>
+            </Button>
+          </Link>
+        </div>
+        <strong>Diagram</strong>
+        <div>Action</div>
+      </header>
+      <div className="container-app">
+        <ServicePane onClick={handleServiceClick} />
+        <Stage height={HEIGHT} width={WIDTH}>
+          <Layer>
+            {grid}
+            {nodes.map((node, key) => (
+              <NodeFactory
+                key={key}
+                node={node}
+                onDragEnd={(e) => {
+                  handleNodeDragEnd(node, e);
+                }}
+              />
+            ))}
+          </Layer>
+        </Stage>
+      </div>
     </div>
   );
 };
