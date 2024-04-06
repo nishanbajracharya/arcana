@@ -34,6 +34,7 @@ const App = () => {
   const [serviceConfigList, setServiceConfigList] = useState<ServiceConfig[]>([]);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [selectedService, setSelectedService] = useState<string>('');
+  const [selectedServiceId, setSelectedServiceId] = useState<string>('');
   
   const getQueryParams = (query:any) => {
     return query
