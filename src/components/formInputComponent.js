@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import {Input} from '@nextui-org/input';
+
 const FormInputView = ({ label, placeholder, inputType, required, onChange, options, value }) => {
     console.log("options are", options)
   return (
@@ -10,9 +12,9 @@ const FormInputView = ({ label, placeholder, inputType, required, onChange, opti
                 <label className="px-2 block text-base font-bold">
                     {label} {(required&&"*")}
                 </label>
-                <input
+                <Input
                     type="text"
-                    className="border border-gray-300 rounded-md w-full bg-slate-500 h-12 mt-3 p-2"
+                    // className="border border-gray-300 rounded-md w-full bg-slate-500 h-12 mt-3 p-2"
                     required={required}
                     placeholder={placeholder}
                     onChange={onChange}
@@ -23,9 +25,9 @@ const FormInputView = ({ label, placeholder, inputType, required, onChange, opti
                 <label className="px-2 block text-base font-bold">
                     {label}
                 </label>
-                <input
+                <Input
                     type="number"
-                    className="border border-gray-300 rounded-md w-full bg-slate-500 h-12 mt-3 p-2"
+                    // className="border border-gray-300 rounded-md w-full bg-slate-500 h-12 mt-3 p-2"
                     required={required}
                     placeholder={placeholder}
                     onChange={onChange}
@@ -36,9 +38,9 @@ const FormInputView = ({ label, placeholder, inputType, required, onChange, opti
                 <label className="px-2 block text-base font-bold w-fit">
                     {label}
                 </label>
-                <input
+                <Input
                     type="checkbox"
-                    className="border border-gray-300 rounded-md bg-slate-500 h-5 w-5 p-2"
+                    // className="border border-gray-300 rounded-md bg-slate-500 h-5 w-5 p-2"
                     required={required}
                     placeholder={placeholder}
                     onChange={onChange}
