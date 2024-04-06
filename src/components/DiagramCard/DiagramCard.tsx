@@ -70,7 +70,7 @@ export const DiagramCard = () => {
                     <div className="mt-2 flex  justify-start">
                       {
                         card && card.nodes && card.nodes.map((node: any) => {
-                          return <Icon name={node.name} className="m-1" key={node}/>
+                          return <Tooltip placement="bottom" content={node.displayName} key={node}><span><Icon name={node.name} className="m-1"/></span></Tooltip>
                         })
                       }
                     </div>

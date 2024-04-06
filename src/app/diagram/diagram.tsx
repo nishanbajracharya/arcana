@@ -305,7 +305,14 @@ useEffect(() => {
                   <span>Cancel</span>
                 </Button>
                 <Button color="primary" variant="light" onPress={async () => {setPreview(false)
-                  await axios.post('http://127.0.0.1:11434/api/download')
+                  const response = await fetch('/api/download')
+                  const blob = await response.blob();
+                  const url = window.URL.createObjectURL(blob);
+                  const link = document.createElement('a');
+                  link.href = url;
+                  link.download = 'archive.zip';
+                  link.click();
+                  window.URL.revokeObjectURL(url);
                 }} className="border-primary">
                   <IoMdDownload /> <span>Download</span>
                 </Button>
