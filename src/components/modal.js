@@ -6,11 +6,13 @@ const ConfigurationModal = ({ isOpen, children, title, onOpenChange, onClose, on
 
   return (
     <Modal isOpen={isOpen} onOpenChange={onOpenChange} hideCloseButton={true}>
-        <ModalContent className="h-[70vh] overflow-y-auto">
+        <ModalContent>
             <>
-              <ModalHeader className="flex flex-col gap-1">{title}</ModalHeader>
+              <ModalHeader className="flex flex-col">{title}</ModalHeader>
               <ModalBody>
-                {children}
+                <div className="h-[70vh] overflow-y-auto">
+                  {children}
+                </div>
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>
