@@ -1,18 +1,21 @@
-import axios from 'axios';
 import { NextRequest } from 'next/server';
+import GenAI from './genAi';
+import TerraformBuilder from './terraformBuilder';
 
 export async function POST(
   req: NextRequest,
 ) {
-  const data = await req.json();
+
+    const data = await req.json();
+
+  const terraformBuilder = new TerraformBuilder(data);
+  await terraformBuilder.createBaseRepo();
+
+  // const genAi = new GenAI();
+  // const terraformData = genAi.generateTerraform()
   try {
-    const response = await axios.post('http://127.0.0.1:11434/api/generate',{
-      "model": "terraform-builder",
-      "prompt":"Quickly generate terraform file for: "+JSON.stringify(data),
-      "stream": false,
-      "format": "json",
-    })
-    return Response.json(JSON.parse(response.data.response));
+    
+    return Response.json({status: 'ok'})
   } catch (ex) {
     console.log(ex)
     return Response.json({error: ex});
