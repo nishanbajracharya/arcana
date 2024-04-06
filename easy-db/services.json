@@ -15,53 +15,21 @@
       "required": false
     },
     {
-      "name": "Image",
-      "componentType": "text",
-      "label": "Image",
-      "defaultValue": "",
-      "required": false
-    },
-    {
       "name": "InstanceType",
       "componentType": "text",
       "label": "Instance Type",
       "defaultValue": "",
-      "required": false
-    },
-    {
-      "name": "KeyName",
-      "componentType": "text",
-      "label": "Key Name",
-      "defaultValue": "",
-      "required": false
-    },
-    {
-      "name": "SubnetId",
-      "componentType": "text",
-      "label": "Subnet Id",
-      "defaultValue": "",
-      "required": false
-    },
-    {
-      "name": "Count",
-      "componentType": "number",
-      "label": "Count",
-      "defaultValue": "",
-      "required": false
-    },
-    {
-      "name": "UserData",
-      "componentType": "text",
-      "label": "User Data",
-      "defaultValue": "",
-      "required": false
-    },
-    {
-      "name": "MonitoringAcceleratorCount",
-      "componentType": "number",
-      "label": "Monitoring Accelerator Count",
-      "defaultValue": "",
-      "required": false
+      "required": false,
+      "options": [
+        {
+          "value": "t2.micro",
+          "label": "t2.micro"
+        },
+        {
+          "value": "t2.small",
+          "label": "t2.small"
+        }
+      ]
     }
   ],
   "amplify": [

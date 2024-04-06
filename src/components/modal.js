@@ -10,7 +10,7 @@ const ConfigurationModal = ({ isOpen, children, title, onOpenChange, onClose, on
             <>
               <ModalHeader className="flex flex-col">{title}</ModalHeader>
               <ModalBody>
-                <div className="h-[70vh] overflow-y-auto">
+                <div className="max-h-[70vh] overflow-y-auto">
                   {children}
                 </div>
               </ModalBody>

@@ -209,6 +209,7 @@ const App = () => {
               inputType={config.componentType}
               onChange={(e) => handleServiceConfigValueChange(config.name, e.target.value)}
               placeholder={config.label}
+              options={config.options}
             />
           ))}
       </ConfigurationModal>
