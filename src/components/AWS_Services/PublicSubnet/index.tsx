@@ -9,7 +9,7 @@ import { AWSComponent } from '@/types';
 import { Group as IGroup } from 'konva/lib/Group';
 import { Transformer as ITransformer } from 'konva/lib/shapes/Transformer';
 
-const PublicSubnet = ({ node, onDragEnd }: AWSComponent) => {
+const PublicSubnet = ({ node, onDragEnd, onClick }: AWSComponent) => {
   const [enableResize, setEnableResize] = useState(false);
   const shapeRef = useRef<IGroup>(null);
   const transformerRef = useRef<ITransformer>(null);
@@ -52,7 +52,7 @@ const PublicSubnet = ({ node, onDragEnd }: AWSComponent) => {
             <div
               className="pub-subnet-icon-container"
               onClick={() => {
-                alert('Clicked');
+                onClick(node.name, node.id);
               }}
             >
               <Icon size={36} name="PublicSubnet"/>

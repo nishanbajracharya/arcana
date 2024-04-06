@@ -9,7 +9,7 @@ import Icon from '../../Icon';
 import './style.css';
 import { AWSComponent } from '@/types';
 
-const VPC = ({ node, onDragEnd }: AWSComponent) => {
+const VPC = ({ node, onDragEnd, onClick }: AWSComponent) => {
   const [enableResize, setEnableResize] = useState(false);
   const shapeRef = useRef<IGroup>(null);
   const transformerRef = useRef<ITransformer>(null);
@@ -52,7 +52,7 @@ const VPC = ({ node, onDragEnd }: AWSComponent) => {
             <div
               className="vpc-icon-container"
               onClick={() => {
-                alert('Clicked');
+                onClick(node.name, node.id);
               }}
             >
               <Icon size={48} name="VPC" />

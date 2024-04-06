@@ -24,7 +24,6 @@ import { generateRandomString } from '../../utils/utils';
 import { Node, ServiceConfig } from '@/types';
 import { Link } from '@nextui-org/link';
 import axios from 'axios';
-import { config } from 'process';
 
 const HEIGHT = window.innerHeight - 48;
 const WIDTH = window.innerWidth - 360;
@@ -236,14 +235,14 @@ const App = () => {
                   {nodes.map(node => {
                     return <Card key={node.id} className="m-4 max-h-[300px] flex-1 min-w-[300px]">
                       <CardHeader>
-                        <p>{node.displayName}</p>
+                        <p><strong>{node.displayName}</strong></p>
                       </CardHeader>
                       <Divider />
                       <CardBody>
                         {node.data?.map((config, key) => {
                           return <>
                           <div key={key} className="flex justify-between py-2">
-                            <span>{config.label}</span>
+                            <span><strong>{config.label}</strong></span>
                             <span>{config.value}</span>
                           </div>
                           <Divider />
@@ -253,7 +252,7 @@ const App = () => {
                       </CardBody>
                       <Divider />
                       <CardFooter>
-                        <span>Cost</span>
+                        <strong>Cost</strong>
                       </CardFooter>
                     </Card>
                   })}
