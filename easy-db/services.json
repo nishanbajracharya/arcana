@@ -1,6 +1,20 @@
 {
   "ec2": [
     {
+      "name": "name",
+      "componentType": "textField",
+      "label": "Name",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "monitoring",
+      "componentType": "checkboxField",
+      "label": "Monitoring",
+      "defaultValue": "true",
+      "required": false
+    },
+    {
       "name": "Image",
       "componentType": "text",
       "label": "Image",
@@ -46,6 +60,119 @@
       "name": "MonitoringAcceleratorCount",
       "componentType": "number",
       "label": "Monitoring Accelerator Count",
+      "defaultValue": "",
+      "required": false
+    }
+  ],
+  "amplify": [
+    {
+      "name": "name",
+      "componentType": "textField",
+      "label": "Name",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "description",
+      "componentType": "textField",
+      "label": "Description",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "accessToken",
+      "componentType": "textField",
+      "label": "Access Token",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "repository",
+      "componentType": "textField",
+      "label": "Repository",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "platform",
+      "componentType": "textField",
+      "label": "Platform",
+      "defaultValue": "WEB",
+      "required": false
+    }
+  ],
+  "securityGroup": [
+    {
+      "name": "name",
+      "componentType": "textField",
+      "label": "Name",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "description",
+      "componentType": "textField",
+      "label": "Description",
+      "defaultValue": "",
+      "required": false
+    }
+  ],
+  "vpc": [
+    {
+      "name": "region",
+      "componentType": "textField",
+      "label": "Region",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "availabilityZone",
+      "componentType": "textField",
+      "label": "Availability Zone",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "name",
+      "componentType": "textField",
+      "label": "Name",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "cidr",
+      "componentType": "textField",
+      "label": "Cidr",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "enableNatGateway",
+      "componentType": "checkboxField",
+      "label": "Enable Nat Gateway",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "enableVpnGateway",
+      "componentType": "checkboxField",
+      "label": "Enable VPN Gateway",
+      "defaultValue": "",
+      "required": false
+    }
+  ],
+  "s3": [
+    {
+      "name": "bucket",
+      "componentType": "textField",
+      "label": "Bucket",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "forceDestroy",
+      "componentType": "checkboxField",
+      "label": "Force Destroy",
       "defaultValue": "",
       "required": false
     }
