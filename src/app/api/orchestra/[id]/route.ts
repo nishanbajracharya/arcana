@@ -14,9 +14,14 @@ export async function GET (
 export async function PUT (
     req: NextRequest, { params }: { params: { id: string } }
 ) {
-    const data = await req.json();
-    await update('orchestras', params.id, data);
-    return Response.json(data);
+    const {orch, nodeId, nodeData} = await req.json();
+    await update('orchestras', params.id, orch);
+    await update('terraforms', nodeId, {
+        id: nodeId,
+        orchId: orch.id,
+        data: nodeData,
+      })
+    return Response.json(orch);
 }
 
 export async function DELETE (

@@ -82,7 +82,8 @@ FormInputView.propTypes = {
     placeholder: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    inputType: PropTypes.oneOf(['text', 'number', 'checkbox', 'dropdown']).isRequired
+    inputType: PropTypes.oneOf(['text', 'number', 'checkbox', 'dropdown']).isRequired,
+    options: PropTypes.any
 };
 
 export default FormInputView;

@@ -33,6 +33,8 @@ const App = () => {
   const [serviceConfigList, setServiceConfigList] = useState<ServiceConfig[]>([]);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [selectedService, setSelectedService] = useState<string>('');
+  const [selectedServiceId, setSelectedServiceId] = useState<string>('');
+
   const [nodes, setNodes] = useState<Node[]>([]);
   const [orchData, setOrchData] = useState<{name: String, id?: String, nodes?:Node[]}>({
     name: "Flow",
@@ -82,7 +84,7 @@ const App = () => {
   };
 
   const handleSave = async (selectedService: string) => {
-    const newNodes = nodes.map(node => node.name === selectedService ? {...node, data: serviceConfigList} : node);
+    const newNodes = nodes.map(node => node.id === selectedServiceId ? {...node, data: serviceConfigList} : node);
     setNodes(newNodes);
 
     const newOrch = {
@@ -90,10 +92,18 @@ const App = () => {
       nodes: newNodes
     }
     if(!newOrch.id) {
-      const {data} = await axios.post("/api/orchestra", newOrch)
+      const {data} = await axios.post("/api/orchestra", {
+        orch: newOrch,
+        nodeId: selectedServiceId,
+        nodeData: serviceConfigList
+      })
       newOrch.id = data.id
     } else {
-      const response = await axios.put(`/api/orchestra/${orchData.id}`, newOrch)
+      const response = await axios.put(`/api/orchestra/${orchData.id}`, {
+        orch: newOrch,
+        nodeId: selectedServiceId,
+        nodeData: serviceConfigList
+      })
     }
     setOrchData(newOrch);
   }
@@ -182,9 +192,10 @@ const App = () => {
                 onDragEnd={(e) => {
                   handleNodeDragEnd(node, e);
                 }}
-                onClick={(name)=> {
+                onClick={(name, id)=> {
                   handleServiceConfiguration(name)
                   setSelectedService(name);
+                  setSelectedServiceId(id);
                 }}
               />
             ))}
@@ -198,11 +209,13 @@ const App = () => {
           handleSave(selectedService);
           setOpenModal(false);
           setSelectedService("");
+          setSelectedServiceId("");
         }}
         onOpenChange={(i) => console.log("on open change", i)}
         onClose={() => setOpenModal(false)}
       >
-        {serviceConfigList.map(config => (
+        {serviceConfigList && serviceConfigList.map(config => (
+          //@ts-ignore
             <FormInputView 
               label={config.label}
               value={config.value || config.defaultValue}

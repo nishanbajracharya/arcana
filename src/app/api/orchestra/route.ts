@@ -5,8 +5,14 @@ const { insert, select } = easyDB({});
 export async function POST(
   req: NextRequest,
 ) {
-  const data = await req.json();
-  const id = await insert('orchestras', data)
+  const {orch, nodeId, nodeData} = await req.json();
+  const id = await insert('orchestras', orch)
+  await insert('terraforms', {
+    id: nodeId,
+    orchId: orch.id,
+    data: nodeData,
+  })
+
   return Response.json({id});
 }
 

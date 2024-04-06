@@ -24,4 +24,4 @@ export type ServiceConfig = {
   value ?: string;
 }
 
-export type AWSComponent = { node: Node; onDragEnd: (e: KonvaEventObject<DragEvent>) => void, onClick: (name: string) => void };
+export type AWSComponent = { node: Node; onDragEnd: (e: KonvaEventObject<DragEvent>) => void, onClick: (name: string, id: string) => void };

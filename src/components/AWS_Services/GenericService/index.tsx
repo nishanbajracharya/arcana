@@ -52,7 +52,7 @@ const AWSService = ({ node, onDragEnd, onClick }: AWSComponent) => {
             <div
               className="service-icon-container"
               onClick={() => {
-                onClick(node.name)
+                onClick(node.name, node.id)
               }}
             >
               <Icon name={node.name} />

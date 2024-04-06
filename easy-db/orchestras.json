@@ -1025,5 +1025,302 @@
 				]
 			}
 		]
+	},
+	"iEsf67g2qK9h": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "JgCCv5N6",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "B34fTEm4",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-machine"
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false,
+						"value": ""
+					},
+					{
+						"name": "Image",
+						"componentType": "text",
+						"label": "Image",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"value": "t2-micro"
+					},
+					{
+						"name": "KeyName",
+						"componentType": "text",
+						"label": "Key Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "SubnetId",
+						"componentType": "text",
+						"label": "Subnet Id",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "Count",
+						"componentType": "number",
+						"label": "Count",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "UserData",
+						"componentType": "text",
+						"label": "User Data",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "MonitoringAcceleratorCount",
+						"componentType": "number",
+						"label": "Monitoring Accelerator Count",
+						"defaultValue": "",
+						"required": false
+					}
+				]
+			}
+		]
+	},
+	"bC02USxpVXdc": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "YBNNVlCH",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "NNfLeJ12",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-machine"
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false,
+						"value": ""
+					},
+					{
+						"name": "Image",
+						"componentType": "text",
+						"label": "Image",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"value": "t2-micro"
+					},
+					{
+						"name": "KeyName",
+						"componentType": "text",
+						"label": "Key Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "SubnetId",
+						"componentType": "text",
+						"label": "Subnet Id",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "Count",
+						"componentType": "number",
+						"label": "Count",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "UserData",
+						"componentType": "text",
+						"label": "User Data",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "MonitoringAcceleratorCount",
+						"componentType": "number",
+						"label": "Monitoring Accelerator Count",
+						"defaultValue": "",
+						"required": false
+					}
+				]
+			}
+		]
+	},
+	"gbczEryDlYAu": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "KJVSPsQn",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "vHjdvk0u",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-ec2"
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false,
+						"value": ""
+					},
+					{
+						"name": "Image",
+						"componentType": "text",
+						"label": "Image",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"value": "t2-micro"
+					},
+					{
+						"name": "KeyName",
+						"componentType": "text",
+						"label": "Key Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "SubnetId",
+						"componentType": "text",
+						"label": "Subnet Id",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "Count",
+						"componentType": "number",
+						"label": "Count",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "UserData",
+						"componentType": "text",
+						"label": "User Data",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "MonitoringAcceleratorCount",
+						"componentType": "number",
+						"label": "Monitoring Accelerator Count",
+						"defaultValue": "",
+						"required": false
+					}
+				]
+			}
+		]
 	}
 }
