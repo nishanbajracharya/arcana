@@ -1,16 +1,5 @@
 import { NextRequest } from 'next/server';
-import easyDB from "easy-db-node";
 const axios = require('axios');
-
-let config = {
-  method: 'post',
-  maxBodyLength: Infinity,
-  url: 'localhost:11434/api/generate',
-  headers: { 
-    'Content-Type': 'application/json'
-  },
-};
-
 
 export async function POST(
   req: NextRequest,

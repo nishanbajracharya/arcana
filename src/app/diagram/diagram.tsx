@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Stage, Layer, Line } from 'react-konva';
 import { KonvaEventObject } from 'konva/lib/Node';
 
@@ -8,6 +8,7 @@ import ServicePane from '../../components/ServicePane';
 import NodeFactory from '../../components/NodeFactory';
 import { generateRandomString } from '../../utils/utils';
 import { Node } from '@/types';
+// import axios from 'axios';
 
 const HEIGHT = window.innerHeight;
 const WIDTH = window.innerWidth - 320;
@@ -16,6 +17,10 @@ const App = () => {
   const [nodes, setNodes] = useState<Node[]>([]);
   const grid = [];
   const gridSize = 30;
+
+  // useEffect(() => {
+  //   axios.get("")
+  // }, [nodes]);
 
   for (let i = 0; i < WIDTH / gridSize; i++) {
     grid.push(
