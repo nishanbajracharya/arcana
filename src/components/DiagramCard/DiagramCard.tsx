@@ -6,6 +6,7 @@ import axios from "axios";
 
 const url = "http://localhost:3000/api/orchestra";
 import {data} from './data';
+import Icon from "../Icon";
 
 export const DiagramCard = () => {
 
@@ -64,13 +65,12 @@ export const DiagramCard = () => {
                         }}
                       /> */}
                     </div>
-                    <div className="mt-2 flex flex-col justify-start">
-                      <span className="flex-wrap text-sm">
-                        
-                      </span>
-                      <span className="flex-wrap text-sm">
-                        
-                      </span>
+                    <div className="mt-2 flex  justify-start">
+                      {
+                        card && card.nodes && card.nodes.map((node: any) => {
+                          return <Icon name={node.name} key={node} className="m-1" />
+                        })
+                      }
                     </div>
                   </div>
 
