@@ -14,4 +14,13 @@ export type Node = {
   };
 };
 
-export type AWSComponent = { node: Node; onDragEnd: (e: KonvaEventObject<DragEvent>) => void };
+export type ServiceConfig = {
+  name : string;
+  componentType : "textField" | "numberField" ;
+  label : string;
+  defaultValue : string;
+  required : boolean;
+  value ?: string;
+}
+
+export type AWSComponent = { node: Node; onDragEnd: (e: KonvaEventObject<DragEvent>) => void, onClick: (name: string) => void };
