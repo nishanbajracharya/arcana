@@ -23,6 +23,9 @@ interface AwsService {
 
 class TerraformBuilder {
   canvasData:Array<AwsService> = [];
+  projectName: string = '';
+  folderPath: string = '';
+
   terraformData: TerraformData = {
     terraform: {
       required_version: ">= 1.4.0",
@@ -45,16 +48,18 @@ class TerraformBuilder {
 
   constructor(canvasData: Array<AwsService>) {
     this.canvasData = canvasData;
+    this.projectName = `terraform-bundle-${Date.now()}`;
+    this.folderPath = `${currentDirectory}/../${this.projectName}`;;
   }
 
   createBaseRepo = async () => {
     try {
-      const projectName = `terraform-bundle-${Date.now()}`;
-      const folderPath = `${currentDirectory}/../${projectName}`;
+      const projectName = this.projectName;
+      const folderPath = this.folderPath;
       await fs.mkdir(folderPath);
       await fs.mkdir(`${folderPath}/modules`);
 
-      this.createModules();
+      await this.createModules();
       const terraformGenerator = new TerraformGenerator(this.terraformData);
       const terraformScript: string = await terraformGenerator.generateTerraformScript();
       await fs.writeFile(`${folderPath}/main.tf`, terraformScript, 'utf8');
@@ -74,13 +79,17 @@ class TerraformBuilder {
       Amplify: { name: "Amplify", source: "./modules/amplify/" }
   }
   const modules: any = [];
-  this.canvasData.forEach(awsService => {
+  this.canvasData.forEach(async awsService => {
 
       switch(awsService.name) {
         case 'VPC': {
           const vpc = moduleMapper['VPC'];
           modules.push(vpc);
           modules.push(moduleMapper['SG'])
+
+          // await fs.mkdir(`${this.folderPath}/modules/VPC`);
+          // await fs.mkdir(`${this.folderPath}/modules/security_group`);
+          await this.createVpcModule(`${this.folderPath}/modules`, `${currentDirectory}/template/modules`);
           break;
         }
         default: {
@@ -93,9 +102,25 @@ class TerraformBuilder {
       this.terraformData.modules = modules;
 
     })
-
   }
 
+  createVpcModule = async (projectDirectory: string, templatePath: string) => {
+    const templateDir = await fs.readdir(templatePath);
+    templateDir.forEach(async file => {
+      const stats = await fs.stat(`${templatePath}/${file}`);
+  
+      if(stats.isFile()) {
+        const fileData = await fs.readFile(`${templatePath}/${file}`, 'utf8');
+        const writePath = `${projectDirectory}/${file}`;
+  
+        await fs.writeFile(writePath, fileData, 'utf8');
+      }
+      else if(stats.isDirectory()) {
+        await fs.mkdir(`${projectDirectory}/${file}`);
+        await this.createVpcModule(`${projectDirectory}/${file}`, `${templatePath}/${file}`);
+      }
+    })
+  }
 
 }
 
