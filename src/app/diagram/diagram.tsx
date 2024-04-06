@@ -34,8 +34,25 @@ const App = () => {
   const [serviceConfigList, setServiceConfigList] = useState<ServiceConfig[]>([]);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [selectedService, setSelectedService] = useState<string>('');
-  const [selectedServiceId, setSelectedServiceId] = useState<string>('');
+  
+  const getQueryParams = (query:any) => {
+    return query
+        ? (/^[?#]/.test(query) ? query.slice(1) : query)
+            .split('&')
+            .reduce((params:any, param:any) => {
+                    let [key, value] = param.split('=');
+                    params[key] = value ? decodeURIComponent(value.replace(/\+/g, ' ')) : '';
+                    return params;
+                }, {}
+            )
+        : {}
+};
 
+  useEffect(() => {
+    const { data } = getQueryParams(window.location.search);
+    console.log(data);
+  }, []);
+  
   const [nodes, setNodes] = useState<Node[]>([]);
   const [orchData, setOrchData] = useState<{name: String, id?: String, nodes?:Node[]}>({
     name: "Flow",
