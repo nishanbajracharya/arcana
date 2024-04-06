@@ -55,7 +55,7 @@ export const DiagramCard = () => {
           {cards.map((card: any) => (
             <div className="m-5 min-w-[300px]" onClick={() => goToEdit(card)} key={card.id}>
               <Link href={{ pathname: "/diagram", query: {data: JSON.stringify(card)} }}>
-                <div className="border-1 rounded border-slate-950 flex flex-col justify-between border-slate-950 p-3 h-64 max-w-80">
+                <div className="border-1 rounded flex flex-col justify-between p-3 h-36 max-w-80">
                   <div>
                     <div className="">
                       <p className="font-bold">{card.name}</p>

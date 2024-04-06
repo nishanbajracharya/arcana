@@ -11,13 +11,19 @@ import { Card } from '@nextui-org/card';
 import { Loader } from '@/components/Common/Loader/Loader';
 import { DiagramCard } from '@/components/DiagramCard/DiagramCard';
 
+import Logo from '../assets/icon.png';
+
+import Image from 'next/image'
+
 export default function Home() {
 
   return (
     <div>
       <div className="bg-white p-4">
         <div className="flex flex-row justify-between items-center">
-          <span className="text-black">Architectures</span>
+          <span className="text-black text-bold text-2xl flex items-center">
+            <Image src={Logo} alt="Logo" width="24" height="24"/> <span className="ml-2">Arcana</span>
+          </span>
           <div className="flex flex-row justify-between items-center">
             {/* <div className="flex flex-row justify-between items-center border-slate-950 p-1">
               <BsSearch
