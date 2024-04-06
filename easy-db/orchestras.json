@@ -1322,5 +1322,641 @@
 				]
 			}
 		]
+	},
+	"AHMkgssIRXyo": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "7RWQ3ZCp",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-ec2"
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"options": [
+							{
+								"value": "t2.micro",
+								"label": "t2.micro"
+							},
+							{
+								"value": "t2.small",
+								"label": "t2.small"
+							}
+						],
+						"value": "t2.medium"
+					}
+				]
+			}
+		]
+	},
+	"OVuOJ8Zt1ew6": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "R4YMFWCf",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"options": [
+							{
+								"value": "t2.micro",
+								"label": "t2.micro"
+							},
+							{
+								"value": "t2.small",
+								"label": "t2.small"
+							}
+						],
+						"value": "t2.medium"
+					}
+				]
+			},
+			{
+				"id": "iUbYge9k",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				},
+				"data": [
+					{
+						"name": "region",
+						"componentType": "text",
+						"label": "Region",
+						"defaultValue": "",
+						"required": false,
+						"value": "us-east-1"
+					},
+					{
+						"name": "availabilityZone",
+						"componentType": "text",
+						"label": "Availability Zone",
+						"defaultValue": "",
+						"required": false,
+						"value": "es-east-1a"
+					},
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "cidr",
+						"componentType": "text",
+						"label": "Cidr",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "enableNatGateway",
+						"componentType": "checkbox",
+						"label": "Enable Nat Gateway",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "enableVpnGateway",
+						"componentType": "checkbox",
+						"label": "Enable VPN Gateway",
+						"defaultValue": "",
+						"required": false
+					}
+				]
+			}
+		],
+		"id": "OVuOJ8Zt1ew6"
+	},
+	"HtPovXSwuLig": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "EguyHgAU",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				},
+				"data": [
+					{
+						"name": "region",
+						"componentType": "text",
+						"label": "Region",
+						"defaultValue": "",
+						"required": false,
+						"value": "us-east-1"
+					},
+					{
+						"name": "availabilityZone",
+						"componentType": "text",
+						"label": "Availability Zone",
+						"defaultValue": "",
+						"required": false,
+						"value": "us-east-1a"
+					},
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "cidr",
+						"componentType": "text",
+						"label": "Cidr",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "enableNatGateway",
+						"componentType": "checkbox",
+						"label": "Enable Nat Gateway",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "enableVpnGateway",
+						"componentType": "checkbox",
+						"label": "Enable VPN Gateway",
+						"defaultValue": "",
+						"required": false
+					}
+				]
+			},
+			{
+				"id": "mfcu3ROv",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"options": [
+							{
+								"value": "t2.micro",
+								"label": "t2.micro"
+							},
+							{
+								"value": "t2.small",
+								"label": "t2.small"
+							}
+						],
+						"value": "t2.medium"
+					}
+				]
+			},
+			{
+				"id": "PtLMk7lW",
+				"name": "PublicSubnet",
+				"displayName": "Public Subnet",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 400,
+					"height": 640
+				}
+			},
+			{
+				"id": "Vfidzb4F",
+				"name": "S3",
+				"displayName": "S3",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "bucket",
+						"componentType": "text",
+						"label": "Bucket",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-bucket"
+					},
+					{
+						"name": "forceDestroy",
+						"componentType": "checkbox",
+						"label": "Force Destroy",
+						"defaultValue": "",
+						"required": false
+					}
+				]
+			}
+		],
+		"id": "HtPovXSwuLig"
+	},
+	"Zvlg9lHk8Qsf": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "o2EN3EAb",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				},
+				"data": [
+					{
+						"name": "region",
+						"componentType": "text",
+						"label": "Region",
+						"defaultValue": "",
+						"required": false,
+						"value": "us-east-1"
+					},
+					{
+						"name": "availabilityZone",
+						"componentType": "text",
+						"label": "Availability Zone",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "cidr",
+						"componentType": "text",
+						"label": "Cidr",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "enableNatGateway",
+						"componentType": "checkbox",
+						"label": "Enable Nat Gateway",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "enableVpnGateway",
+						"componentType": "checkbox",
+						"label": "Enable VPN Gateway",
+						"defaultValue": "",
+						"required": false
+					}
+				]
+			},
+			{
+				"id": "CFiXuRl9",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"options": [
+							{
+								"value": "t2.micro",
+								"label": "t2.micro"
+							},
+							{
+								"value": "t2.small",
+								"label": "t2.small"
+							}
+						],
+						"value": "t2.medium"
+					}
+				]
+			}
+		],
+		"id": "Zvlg9lHk8Qsf"
+	},
+	"QJDVW97bFXX4": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "Cab5fDsR",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				},
+				"data": [
+					{
+						"name": "region",
+						"componentType": "text",
+						"label": "Region",
+						"defaultValue": "",
+						"required": false,
+						"value": "us-east-1"
+					},
+					{
+						"name": "availabilityZone",
+						"componentType": "text",
+						"label": "Availability Zone",
+						"defaultValue": "",
+						"required": false,
+						"value": "us-east-1a"
+					},
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "cidr",
+						"componentType": "text",
+						"label": "Cidr",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "enableNatGateway",
+						"componentType": "checkbox",
+						"label": "Enable Nat Gateway",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "enableVpnGateway",
+						"componentType": "checkbox",
+						"label": "Enable VPN Gateway",
+						"defaultValue": "",
+						"required": false
+					}
+				]
+			},
+			{
+				"id": "rWB21HmA",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"options": [
+							{
+								"value": "t2.micro",
+								"label": "t2.micro"
+							},
+							{
+								"value": "t2.small",
+								"label": "t2.small"
+							}
+						],
+						"value": "t2.medium"
+					}
+				]
+			},
+			{
+				"id": "UFBAb77x",
+				"name": "S3",
+				"displayName": "S3",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "bucket",
+						"componentType": "text",
+						"label": "Bucket",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-bucket"
+					},
+					{
+						"name": "forceDestroy",
+						"componentType": "checkbox",
+						"label": "Force Destroy",
+						"defaultValue": "",
+						"required": false
+					}
+				]
+			},
+			{
+				"id": "ehVYIXJB",
+				"name": "PrivateSubnet",
+				"displayName": "Private Subnet",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 400,
+					"height": 640
+				}
+			},
+			{
+				"id": "OG5u93Gd",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false
+					}
+				]
+			}
+		],
+		"id": "QJDVW97bFXX4"
 	}
 }

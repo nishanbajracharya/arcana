@@ -24,6 +24,7 @@ import { generateRandomString } from '../../utils/utils';
 import { Node, ServiceConfig } from '@/types';
 import { Link } from '@nextui-org/link';
 import axios from 'axios';
+import ServiceCost from '@/components/ServiceCost';
 
 const HEIGHT = window.innerHeight - 48;
 const WIDTH = window.innerWidth - 360;
@@ -251,8 +252,8 @@ const App = () => {
                       )}
                       </CardBody>
                       <Divider />
-                      <CardFooter>
-                        <strong>Cost</strong>
+                      <CardFooter className="flex justify-between">
+                        <ServiceCost config={node}/>
                       </CardFooter>
                     </Card>
                   })}
