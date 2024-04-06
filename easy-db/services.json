@@ -1,14 +1,53 @@
 {
-    "ec2": {
-        "Image": "textField",
-        "InstanceType": "textField",
-        "KeyName": "textField",
-        "SecurityGroupIds": [
-          "textField"
-        ],
-        "SubnetId": "textField",
-        "Count": "numberField",
-        "UserData": "textField",
-        "MonitoringAcceleratorCount": "numberField"
+  "ec2": [
+    {
+      "name": "Image",
+      "componentType": "textField",
+      "label": "Image",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "InstanceType",
+      "componentType": "textField",
+      "label": "Instance Type",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "KeyName",
+      "componentType": "textField",
+      "label": "Key Name",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "SubnetId",
+      "componentType": "textField",
+      "label": "Subnet Id",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "Count",
+      "componentType": "numberField",
+      "label": "Count",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "UserData",
+      "componentType": "textField",
+      "label": "User Data",
+      "defaultValue": "",
+      "required": false
+    },
+    {
+      "name": "MonitoringAcceleratorCount",
+      "componentType": "numberField",
+      "label": "Monitoring Accelerator Count",
+      "defaultValue": "",
+      "required": false
     }
+  ]
 }
