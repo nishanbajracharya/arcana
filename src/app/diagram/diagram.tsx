@@ -4,6 +4,7 @@ import { KonvaEventObject } from 'konva/lib/Node';
 
 import { Button } from '@nextui-org/button';
 import { IoIosArrowBack } from 'react-icons/io';
+import { IoIosPlay } from 'react-icons/io';
 
 import './diagram.css';
 
@@ -84,14 +85,19 @@ const App = () => {
       <header className="h-[48px] bg-[#efeff7] border-b-[1px] border-b-[#ddd] flex leading-[48px] px-[16px] justify-between">
         <div>
           <Link href="/">
-            <Button variant="faded">
+            <Button variant="faded" className="bg-white">
               <IoIosArrowBack />
               <span>Back</span>
             </Button>
           </Link>
         </div>
         <strong>Diagram</strong>
-        <div>Action</div>
+        <div>
+          <Button color="primary">
+            <IoIosPlay />
+            <span>Run</span>
+          </Button>
+        </div>
       </header>
       <div className="container-app">
         <ServicePane onClick={handleServiceClick} />
