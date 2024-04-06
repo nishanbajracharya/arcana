@@ -11,7 +11,7 @@ interface IServicePane {
 const ServicePane = ({ onClick }: IServicePane) => {
   return (
     <div className="container-service_pane">
-      <h1>{manifest.title}</h1>
+      <div className="my-8"><strong>{manifest.title}</strong></div>
       {manifest.sections.map((section, key) => (
         <div className="section" key={key}>
           <h2>{section.title}</h2>

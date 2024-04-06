@@ -1,7 +1,7 @@
 .container-service_pane {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 360px;
   min-height: 100vh;
   background-color: #dfe3e8;
   padding-left: 16px;

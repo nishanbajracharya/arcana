@@ -11,7 +11,7 @@ import { Node } from '@/types';
 // import axios from 'axios';
 
 const HEIGHT = window.innerHeight;
-const WIDTH = window.innerWidth - 320;
+const WIDTH = window.innerWidth - 360;
 
 const App = () => {
   const [nodes, setNodes] = useState<Node[]>([]);
