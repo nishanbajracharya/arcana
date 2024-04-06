@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Stage, Layer, Line } from 'react-konva';
 import { KonvaEventObject } from 'konva/lib/Node';
 
+import { IoMdDownload } from "react-icons/io";
+import { GrDeploy } from "react-icons/gr";
+
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from "@nextui-org/react";
+
+
 import { Button } from '@nextui-org/button';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IoIosPlay } from 'react-icons/io';
@@ -33,6 +39,8 @@ const App = () => {
   });
   const grid = [];
   const gridSize = 30;
+
+  const [preview, setPreview] = useState(false);
 
   // useEffect(() => {
   //   axios.get("")
@@ -139,6 +147,10 @@ const App = () => {
     console.log("service config list", newConfig)
   }
 
+  function showPreview() {
+    setPreview(true);
+  }
+
   return (
     <div>
       <header className="h-[48px] bg-[#efeff7] border-b-[1px] border-b-[#ddd] flex leading-[48px] px-[16px] justify-between">
@@ -152,7 +164,7 @@ const App = () => {
         </div>
         <strong>Diagram</strong>
         <div>
-          <Button color="primary">
+          <Button color="primary" onPress={() => showPreview()}>
             <IoIosPlay />
             <span>Run</span>
           </Button>
@@ -200,6 +212,29 @@ const App = () => {
             />
           ))}
       </ConfigurationModal>
+      <Modal isOpen={preview} onOpenChange={() => null} size="5xl" hideCloseButton>
+        <ModalContent>
+            <>
+              <ModalHeader className="flex flex-col">Preview</ModalHeader>
+              <ModalBody>
+                <div className="h-[70vh] overflow-y-auto">
+                  Preview
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={() => setPreview(false)} className="mr-auto">
+                  <span>Cancel</span>
+                </Button>
+                <Button color="primary" variant="light" onPress={() => setPreview(false)} className="border-primary">
+                  <IoMdDownload /> <span>Download</span>
+                </Button>
+                <Button color="primary" onPress={() => setPreview(false)}>
+                  <GrDeploy /><span>Deploy</span>
+                </Button>
+              </ModalFooter>
+            </>
+        </ModalContent>
+      </Modal>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 // import PrivateSubnet from 'react-aws-icons/dist/aws/compute/VPN';
-import PublicSubnet from 'react-aws-icons/dist/aws/compute/VPCSubnet';
+// import PublicSubnet from 'react-aws-icons/dist/aws/compute/VPCSubnet';
 // import VPC from 'react-aws-icons/dist/aws/compute/VPC';
 // import EC2 from 'react-aws-icons/dist/aws/logo/EC2';
 // import ECS from 'react-aws-icons/dist/aws/logo/ECS';
@@ -28,6 +28,7 @@ import DynamoDB from 'aws-react-icons/lib/icons/ArchitectureAmazonDynamoDB';
 import NATGateway from 'aws-react-icons/lib/icons/ResourceAmazonVPCNATGateway';
 import StepFunctions from 'aws-react-icons/lib/icons/ArchitectureAWSStepFunctions';
 import PrivateSubnet from 'aws-react-icons/lib/icons/ArchitectureAWSClientVPN';
+import PublicSubnet from 'aws-react-icons/lib/icons/ArchitectureAWSClientVPN';
 import Amplify from 'aws-react-icons/lib/icons/ArchitectureAWSAmplify';
 
 interface IIcon {
