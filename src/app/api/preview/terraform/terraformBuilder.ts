@@ -51,7 +51,7 @@ class TerraformBuilder {
 
   constructor(canvasData: Array<AwsService>) {
     this.canvasData = canvasData;
-    this.projectName = `terraform-bundle-${Date.now()}`;
+    this.projectName = `terraform-bundle`;
     this.folderPath = `${currentDirectory}/../${this.projectName}`;;
    this.terraformGenerator = new TerraformGenerator(this.terraformData);
 
