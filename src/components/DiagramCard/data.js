@@ -142,5 +142,20 @@ export const data = [
         },
       },
     ],
+    nodes: [
+      {
+          "id": "5Z7W6a2U",
+          "name": "Lambda",
+          "displayName": "Lambda",
+          "position": {
+              "x": 200,
+              "y": 300
+          },
+          "size": {
+              "width": 88,
+              "height": 88
+          }
+      }
+    ]
   },
 ];

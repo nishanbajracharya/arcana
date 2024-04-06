@@ -48,10 +48,21 @@ const App = () => {
         : {}
 };
 
-  useEffect(() => {
-    const { data } = getQueryParams(window.location.search);
-    console.log(data);
-  }, []);
+useEffect(() => {
+  const { data } = getQueryParams(window.location.search);
+  let objData = {};
+  if (data){
+    try {
+      objData = JSON.parse(data);
+    } catch (e){
+      //do nothing
+    }
+  }
+  if(objData?.nodes && objData?.nodes.length > 0) {
+    setNodes(objData.nodes)
+    console.log(objData.nodes);
+  }
+}, []);
   
   const [nodes, setNodes] = useState<Node[]>([]);
   const [orchData, setOrchData] = useState<{name: String, id?: String, nodes?:Node[]}>({
