@@ -28,6 +28,7 @@ import DynamoDB from 'aws-react-icons/lib/icons/ArchitectureAmazonDynamoDB';
 import NATGateway from 'aws-react-icons/lib/icons/ResourceAmazonVPCNATGateway';
 import StepFunctions from 'aws-react-icons/lib/icons/ArchitectureAWSStepFunctions';
 import PrivateSubnet from 'aws-react-icons/lib/icons/ArchitectureAWSClientVPN';
+import Amplify from 'aws-react-icons/lib/icons/ArchitectureAWSAmplify';
 
 interface IIcon {
   name?: string;
@@ -96,6 +97,10 @@ const Icon = ({ name, size = 48, style = {}, className }: IIcon) => {
     }
     case 'PrivateSubnet': {
       return <PrivateSubnet size={size} style={style} className={className} />;
+      break;
+    }
+    case 'Amplify': {
+      return <Amplify size={size} style={style} className={className} />;
       break;
     }
     default: {

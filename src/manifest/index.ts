@@ -44,6 +44,11 @@ const manifest = {
           type: 'service',
           displayName: 'Step Functions',
         },
+        {
+          name: 'Amplify',
+          type: 'service',
+          displayName: 'Amplify',
+        },
       ],
     },
     {
