@@ -3,9 +3,10 @@ import easyDB from "easy-db-node";
 import { NextApiRequest } from 'next';
 import { useParams } from 'next/navigation';
 const { select } = easyDB({});
- 
+
 export async function GET(
-  req: NextApiRequest, {params}: {params: {serviceName: string}}
+  req: NextApiRequest, { params }: { params: { serviceName: string } }
 ) {
-  return Response.json({id:params.serviceName});
+  const service = await select('services', params.serviceName);
+  return Response.json({ service });
 }

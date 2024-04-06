@@ -1,0 +1,14 @@
+{
+    "ec2": {
+        "Image": "textField",
+        "InstanceType": "textField",
+        "KeyName": "textField",
+        "SecurityGroupIds": [
+          "textField"
+        ],
+        "SubnetId": "textField",
+        "Count": "numberField",
+        "UserData": "textField",
+        "MonitoringAcceleratorCount": "numberField"
+    }
+}
