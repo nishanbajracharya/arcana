@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server';
 import GenAI from './genAi';
-import TerraformBuilder from './terraformBuilder';
+import TerraformBuilder from './terraform/terraformBuilder';
 
 export async function POST(
   req: NextRequest,
