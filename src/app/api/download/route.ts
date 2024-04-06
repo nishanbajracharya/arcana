@@ -1,30 +1,17 @@
-import { NextRequest, NextResponse } from 'next/server';
-const archiver = require('archiver');
-const path = require('path');
-const fs = require('fs');
+import path from 'node:path';
+import AdmZip from 'adm-zip';
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function GET() {
+  const headers = new Headers();
+  headers.append('Content-Disposition', 'attachment; filename=terraform-bundle.zip');
+  headers.append('Content-Type', 'application/zip');
 
-    const terraformFolder = '../../../../../terraform-bundle';
-    const zipName = 'terraform.zip';
+  const zip = new AdmZip();
+  zip.addLocalFolder(path.join(process.cwd(), '../terraform-bundle'));
 
-    // Create a writable stream for the response
-    const output = fs.createWriteStream(path.join(__dirname, zipName));
+  const zipBuffer = zip.toBuffer();
 
-    // Create a new archive
-    const archive = archiver('zip', {
-        zlib: { level: 9 },
-    });
-
-    // Pipe the archive to the response stream
-    archive.pipe(output);
-
-    // Add the contents of the terraform folder to the archive
-    archive.directory(terraformFolder, false);
-
-    // Finalize the archive
-    archive.finalize();
-
-    // Set response headers
-    res.setHeader('Content-Disposition', `attachment; filename="${zipName}"`);
+  return new Response(zipBuffer, {
+    headers,
+  });
 }
