@@ -1,6 +1,10 @@
 {
   "ec2": [
     {
+      "name": "source",
+      "value": "terraform-aws-modules/ec2-instance/aws"
+    },
+    {
       "name": "name",
       "componentType": "text",
       "label": "Name",
@@ -15,7 +19,7 @@
       "required": false
     },
     {
-      "name": "InstanceType",
+      "name": "instance_type",
       "componentType": "text",
       "label": "Instance Type",
       "defaultValue": "",
@@ -34,6 +38,10 @@
   ],
   "amplify": [
     {
+      "name": "source",
+      "value": "cloudposse/amplify-app/aws"
+    },
+    {
       "name": "name",
       "componentType": "text",
       "label": "Name",
@@ -48,7 +56,7 @@
       "required": false
     },
     {
-      "name": "accessToken",
+      "name": "access_token",
       "componentType": "text",
       "label": "Access Token",
       "defaultValue": "",
@@ -87,6 +95,10 @@
   ],
   "vpc": [
     {
+      "name": "source",
+      "value": "terraform-aws-modules/vpc/aws"
+    },
+    {
       "name": "region",
       "componentType": "text",
       "label": "Region",
@@ -94,11 +106,12 @@
       "required": false
     },
     {
-      "name": "availabilityZone",
+      "name": "azs",
       "componentType": "text",
       "label": "Availability Zone",
       "defaultValue": "",
-      "required": false
+      "required": false,
+      "isArray": true
     },
     {
       "name": "name",
@@ -110,19 +123,35 @@
     {
       "name": "cidr",
       "componentType": "text",
-      "label": "Cidr",
+      "label": "CIDR Block",
       "defaultValue": "",
       "required": false
     },
     {
-      "name": "enableNatGateway",
+      "name": "private_subnets",
+      "componentType": "text",
+      "label": "Public Subnet",
+      "defaultValue": "",
+      "required": false,
+      "isArray": true
+    },
+    {
+      "name": "public_subnets",
+      "componentType": "text",
+      "label": "Private Subnet",
+      "defaultValue": "",
+      "required": false,
+      "isArray": true
+    },
+    {
+      "name": "enable_nat_gateway",
       "componentType": "checkbox",
       "label": "Enable Nat Gateway",
       "defaultValue": "",
       "required": false
     },
     {
-      "name": "enableVpnGateway",
+      "name": "enable_vpn_gateway",
       "componentType": "checkbox",
       "label": "Enable VPN Gateway",
       "defaultValue": "",
@@ -130,6 +159,10 @@
     }
   ],
   "s3": [
+    {
+      "name": "source",
+      "value": "terraform-aws-modules/s3-bucket/aws"
+    },
     {
       "name": "bucket",
       "componentType": "text",

@@ -26,6 +26,7 @@ class TerraformBuilder {
   canvasData:Array<AwsService> = [];
   projectName: string = '';
   folderPath: string = '';
+  vpcNode: any = null;
   terraformGenerator: TerraformGenerator;
 
   terraformData: TerraformData = {
@@ -64,17 +65,19 @@ class TerraformBuilder {
       await fs.mkdir(`${folderPath}/modules`);
 
       await this.createModules();
+      this.terraformGenerator.setTerraformData(this.terraformData);
       const terraformScript: string = await this.terraformGenerator.generateTerraformScript();
       await fs.writeFile(`${folderPath}/main.tf`, terraformScript, 'utf8');
 
     } catch (error) {
       console.log('Err', error);
+      throw error;
     }
   }
 
   createModules = async () => {
     const moduleMapper = {
-      VPC: { name: "vpc", source: "./modules/vpc/" },
+      VPC: { name: "VPC", source: "./modules/VPC/" },
       SG: { name: "default-security-group", source: "./modules/security_group/", vpc_id: "module.vpc.vpc_id", vpc_cidr_block: "module.vpc.vpc_cidr_block" },
       EC2: { name: "EC2", source: "./modules/EC2/", subnet_id: "module.vpc.public_subnet_id", security_group: "module.web_server_sg.security_group_id" },
       S3: { name: "S3", source: "./modules/S3/" },
@@ -83,38 +86,42 @@ class TerraformBuilder {
   const modules: any = [];
   const terraformDao = new TerraformDAO();
   await terraformDao.setTerraformDataFromDB();
-  this.canvasData.forEach(async awsService => {
+  await Promise.all(this.canvasData.map(async awsService => {
 
-      switch(awsService.name) {
-        case 'VPC': {
-          const vpc = moduleMapper['VPC'];
-          modules.push(vpc);
-          modules.push(moduleMapper['SG'])
+    switch(awsService.name) {
+      case 'VPC': {
+        const vpc = moduleMapper['VPC'];
+        modules.push(vpc);
+        modules.push(moduleMapper['SG'])
 
-          await this.createVpcModule(`${this.folderPath}/modules`, `${currentDirectory}/template/modules`);
+        const terraformNode = terraformDao.getTerraformDataById(awsService.id)
+        const terraformScript = this.terraformGenerator.generateModuleTerraformScript(terraformNode, false);
+        this.vpcNode = terraformScript;
+        await this.createVpcModule(`${this.folderPath}/modules`, `${currentDirectory}/template/modules`);
+       
+        break;
+      }
+      default: {
+        if(awsService.name !== 'PublicSubnet' || awsService.name !== 'PrivateSubnet' || awsService.name !== 'VPC') {
+          //@ts-ignore
+          const service = moduleMapper[awsService.name];
+          modules.push(service);
+          const pathName = `${this.folderPath}/modules`
+          await fs.mkdir(`${pathName}/${awsService.name}`);
           const terraformNode = terraformDao.getTerraformDataById(awsService.id)
-          const terraformScript = this.terraformGenerator.generateModuleTerraformScript(terraformNode, false);
-          fs.writeFile(`${this.folderPath}/modules/vpc/main.tf`, terraformScript, 'utf8');
-          break;
-        }
-        default: {
-          if(awsService.name !== 'PublicSubnet' || awsService.name !== 'PrivateSubnet') {
-            //@ts-ignore
-            const service = moduleMapper[awsService.name];
-            modules.push(service);
-            const pathName = `${this.folderPath}/modules`
-            await fs.mkdir(`${pathName}/${awsService.name}`);
-            const terraformNode = terraformDao.getTerraformDataById(awsService.id)
+          if(terraformNode) {
             const withVar = awsService.name === 'EC2' ? true : false;
-            const terraformScript = this.terraformGenerator.generateModuleTerraformScript(terraformNode, withVar);
-            fs.writeFile(`${pathName}/${awsService.name}/main.tf`, terraformScript, 'utf8');
+          const terraformScript = this.terraformGenerator.generateModuleTerraformScript(terraformNode, withVar);
+          fs.writeFile(`${pathName}/${awsService.name}/main.tf`, terraformScript, 'utf8');
           }
         }
       }
+    }
+  }))
 
-      this.terraformData.modules = modules;
+  //@ts-ignore
+  this.terraformData.modules = modules.filter(item => item !== undefined);
 
-    })
   }
 
   createVpcModule = async (projectDirectory: string, templatePath: string) => {
@@ -125,8 +132,9 @@ class TerraformBuilder {
       if(stats.isFile()) {
         const fileData = await fs.readFile(`${templatePath}/${file}`, 'utf8');
         const writePath = `${projectDirectory}/${file}`;
+        const data = projectDirectory.includes('VPC') && file == 'main.tf' ? this.vpcNode : fileData
   
-        await fs.writeFile(writePath, fileData, 'utf8');
+        await fs.writeFile(writePath, data, 'utf8');
       }
       else if(stats.isDirectory()) {
         await fs.mkdir(`${projectDirectory}/${file}`);

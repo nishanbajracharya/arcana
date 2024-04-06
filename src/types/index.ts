@@ -22,6 +22,7 @@ export type ServiceConfig = {
   defaultValue : string;
   required : boolean;
   value ?: string;
+  isArray?: boolean
 }
 
 export type AWSComponent = { node: Node; onDragEnd: (e: KonvaEventObject<DragEvent>) => void, onClick: (name: string, id: string) => void };

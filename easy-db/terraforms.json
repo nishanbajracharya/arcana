@@ -1,22 +1,38 @@
 {
-	"r6hrVWdKAMbY": {
-		"id": "jCgKS40k",
-		"moduleName": "EC2",
+	"9hP9Cl6ci28l": {
+		"id": "XiiQYvHA",
+		"moduleName": "VPC",
 		"data": {
 			"module": {
-				"name": "my-ec2",
-				"monitoring": true,
-				"instance_type": "t2.micro"
+				"source": "terraform-aws-modules/vpc/aws",
+				"region": "us-east-1",
+				"azs": [
+					"us-east-1a",
+					"us-east-1b"
+				],
+				"name": "my-first-vpc",
+				"cidr": "10.0.0.0/16",
+				"private_subnets": [
+					"10.1.0.0/24"
+				],
+				"public_subnets": [
+					"10.2.0.0/24"
+				],
+				"enable_nat_gateway": true,
+				"enable_vpn_gateway": false
 			}
 		}
 	},
-	"qg8GCvel1dzj": {
-		"id": "b49qb1CC",
+	"1mYhT7u6": {
+		"id": "1mYhT7u6",
 		"moduleName": "EC2",
 		"data": {
-			"name": "my_ec2",
-			"monitoring": true,
-			"InstanceType": "t2.micro"
+			"module": {
+				"source": "terraform-aws-modules/ec2-instance/aws",
+				"name": "my-instance",
+				"monitoring": true,
+				"instance_type": "t2.micro"
+			}
 		}
 	}
 }

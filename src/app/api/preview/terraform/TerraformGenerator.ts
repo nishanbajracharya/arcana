@@ -36,6 +36,10 @@ class TerraformGenerator {
     this.jsonData = jsonData;
   }
 
+  public setTerraformData = (jsonData: TerraformData) => {
+    this.jsonData = jsonData;
+  }
+
   private async jsonToTerraform(): Promise<string> {
     let tfScript = '';
 
@@ -92,7 +96,6 @@ class TerraformGenerator {
     }
   
     tfScript += `module "${moduleData.moduleName}" {\n`;
-    tfScript += `  source = "./modules/${moduleData.moduleName}/"\n`;
   
     // Loop through dynamic values and add them to the Terraform script
     if(moduleData?.data?.module) {

@@ -7,7 +7,7 @@ export async function POST(
 
     const data = await req.json();
 
-  const terraformBuilder = new TerraformBuilder(data);
+  const terraformBuilder = new TerraformBuilder(data.nodes);
   await terraformBuilder.createBaseRepo();
 
   try {

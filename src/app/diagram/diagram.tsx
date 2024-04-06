@@ -179,18 +179,28 @@ useEffect(() => {
   }
 
   const handleServiceConfigValueChange = (fieldName : string, fieldValue : string) => {
+    //@ts-ignore
     const newConfig:ServiceConfig[] = serviceConfigList.map((config) => {
-      if (config.name === fieldName)
-        return {...config, value: fieldValue}
-      else 
-        return config
+      if (config.name === fieldName) {
+        const value = config.isArray ? stringToArray(fieldValue) : fieldValue;
+        return {...config, value: value}
+    } else {
+      return config
+    }
     })
     setServiceConfigList(newConfig)
     console.log("service config list", newConfig)
   }
 
-  function showPreview() {
+  const stringToArray = (input: string): string[]  => {
+    // Split the input string by comma and trim each element
+    return input.split(',').map(item => item.trim());
+  }
+
+  async function showPreview() {
     setPreview(true);
+    await axios.post("/api/preview", orchData);
+
   }
 
   return (
