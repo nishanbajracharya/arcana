@@ -61,7 +61,7 @@ export default function ServiceCost({ config }: { config: object }) {
       <strong>Cost</strong>{' '}
       <span className="flex items-center">
         {cost.cost} {cost.costUnit}
-        <Tooltip content={cost.suggestion}>
+        <Tooltip content={cost.suggestion} placement="bottom">
           <span className="ml-1">
             <IoIosInformationCircleOutline color="primary"/>
           </span>
