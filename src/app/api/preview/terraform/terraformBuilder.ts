@@ -74,9 +74,9 @@ class TerraformBuilder {
     const moduleMapper = {
       VPC: { name: "vpc", source: "./modules/vpc/" },
       SG: { name: "default-security-group", source: "./modules/security_group/", vpc_id: "module.vpc.vpc_id", vpc_cidr_block: "module.vpc.vpc_cidr_block" },
-      EC2: { name: "EC2", source: "./modules/ec2/", subnet_id: "module.vpc.public_subnet_id", security_group: "module.web_server_sg.security_group_id" },
-      S3: { name: "S3", source: "./modules/s3/" },
-      Amplify: { name: "Amplify", source: "./modules/amplify/" }
+      EC2: { name: "EC2", source: "./modules/EC2/", subnet_id: "module.vpc.public_subnet_id", security_group: "module.web_server_sg.security_group_id" },
+      S3: { name: "S3", source: "./modules/S3/" },
+      Amplify: { name: "Amplify", source: "./modules/Amplify/" }
   }
   const modules: any = [];
   this.canvasData.forEach(async awsService => {
@@ -87,8 +87,6 @@ class TerraformBuilder {
           modules.push(vpc);
           modules.push(moduleMapper['SG'])
 
-          // await fs.mkdir(`${this.folderPath}/modules/VPC`);
-          // await fs.mkdir(`${this.folderPath}/modules/security_group`);
           await this.createVpcModule(`${this.folderPath}/modules`, `${currentDirectory}/template/modules`);
           break;
         }
