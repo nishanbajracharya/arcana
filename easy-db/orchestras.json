@@ -55,5 +55,975 @@
 				}
 			]
 		}
+	},
+	"70tpM5mfe6NU": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "VJnPCZXO",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "iKeiSAP3",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "BfWBgywW",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "iucutVE9",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "dsa"
+					}
+				]
+			}
+		]
+	},
+	"zeYdeUBNct3O": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "VJnPCZXO",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "iKeiSAP3",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "BfWBgywW",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "iucutVE9",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "asd"
+					}
+				]
+			}
+		]
+	},
+	"FZguosj7DFie": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "VJnPCZXO",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "iKeiSAP3",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "BfWBgywW",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "iucutVE9",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "sadasd"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "asdasd"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "dsa"
+					}
+				]
+			}
+		],
+		"id": "FZguosj7DFie"
+	},
+	"bDfy2B1M78vP": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "WLvHFr7w",
+				"name": "PrivateSubnet",
+				"displayName": "Private Subnet",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 400,
+					"height": 640
+				}
+			},
+			{
+				"id": "ebD7G06o",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "jnbmn"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "asd"
+					}
+				]
+			}
+		],
+		"id": "bDfy2B1M78vP"
+	},
+	"dOKml5E5Xofv": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "msuRNh1I",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "asdasd"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsadsa"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "asdasd"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsadsa"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "dsasd"
+					}
+				]
+			}
+		]
+	},
+	"7ABPDnaYjMUT": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "o70D5whz",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "dsa"
+					}
+				]
+			}
+		]
+	},
+	"gmPDgU4MRnF1": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "jl8FlxqE",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "sadsad"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsadsa"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsasad"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "dsaasd"
+					}
+				]
+			}
+		]
+	},
+	"dCp9l67yYslt": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "R7rWNoqd",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "asdasd"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "asd"
+					}
+				]
+			}
+		]
+	},
+	"DAcumBhrpthh": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "rawpJJm0",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsaasd"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsads"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "dsaasd"
+					}
+				]
+			}
+		],
+		"id": "DAcumBhrpthh"
+	},
+	"1WowGgdVRQKI": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "Ojb2CO4b",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsasad"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "sadasd"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "dsa"
+					}
+				]
+			}
+		]
+	},
+	"NUC4kaFmVWjd": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "bD4fFZSv",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "asd"
+					}
+				]
+			}
+		]
+	},
+	"AfXv3uA0xyBr": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "tmeCWEcQ",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false
+					}
+				]
+			}
+		],
+		"id": "AfXv3uA0xyBr"
+	},
+	"QFuKf01G8yEL": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "dy1txkWw",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsaasd"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsa"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false,
+						"value": "WEBasd"
+					}
+				]
+			}
+		],
+		"id": "QFuKf01G8yEL"
+	},
+	"9dqPav0MgtA4": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "EeduidCv",
+				"name": "Amplify",
+				"displayName": "Amplify",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "asdasd"
+					},
+					{
+						"name": "description",
+						"componentType": "text",
+						"label": "Description",
+						"defaultValue": "",
+						"required": false,
+						"value": "dsaasd"
+					},
+					{
+						"name": "accessToken",
+						"componentType": "text",
+						"label": "Access Token",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "repository",
+						"componentType": "text",
+						"label": "Repository",
+						"defaultValue": "",
+						"required": false,
+						"value": "asd"
+					},
+					{
+						"name": "platform",
+						"componentType": "text",
+						"label": "Platform",
+						"defaultValue": "WEB",
+						"required": false
+					}
+				]
+			}
+		]
 	}
 }

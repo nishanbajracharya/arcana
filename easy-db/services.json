@@ -2,14 +2,14 @@
   "ec2": [
     {
       "name": "name",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Name",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "monitoring",
-      "componentType": "checkboxField",
+      "componentType": "checkbox",
       "label": "Monitoring",
       "defaultValue": "true",
       "required": false
@@ -67,35 +67,35 @@
   "amplify": [
     {
       "name": "name",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Name",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "description",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Description",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "accessToken",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Access Token",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "repository",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Repository",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "platform",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Platform",
       "defaultValue": "WEB",
       "required": false
@@ -104,14 +104,14 @@
   "securityGroup": [
     {
       "name": "name",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Name",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "description",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Description",
       "defaultValue": "",
       "required": false
@@ -120,42 +120,42 @@
   "vpc": [
     {
       "name": "region",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Region",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "availabilityZone",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Availability Zone",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "name",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Name",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "cidr",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Cidr",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "enableNatGateway",
-      "componentType": "checkboxField",
+      "componentType": "checkbox",
       "label": "Enable Nat Gateway",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "enableVpnGateway",
-      "componentType": "checkboxField",
+      "componentType": "checkbox",
       "label": "Enable VPN Gateway",
       "defaultValue": "",
       "required": false
@@ -164,14 +164,14 @@
   "s3": [
     {
       "name": "bucket",
-      "componentType": "textField",
+      "componentType": "text",
       "label": "Bucket",
       "defaultValue": "",
       "required": false
     },
     {
       "name": "forceDestroy",
-      "componentType": "checkboxField",
+      "componentType": "checkbox",
       "label": "Force Destroy",
       "defaultValue": "",
       "required": false

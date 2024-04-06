@@ -14,6 +14,7 @@ const FormInputView = ({ label, placeholder, inputType, required, onChange, opti
                     type="text"
                     className="border border-gray-300 rounded-md w-full bg-slate-500 h-12 mt-3 p-2"
                     required={required}
+                    value={value}
                     placeholder={placeholder}
                     onChange={onChange}
                 />
@@ -26,6 +27,7 @@ const FormInputView = ({ label, placeholder, inputType, required, onChange, opti
                 <input
                     type="number"
                     className="border border-gray-300 rounded-md w-full bg-slate-500 h-12 mt-3 p-2"
+                    value={value}
                     required={required}
                     placeholder={placeholder}
                     onChange={onChange}

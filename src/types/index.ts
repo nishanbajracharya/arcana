@@ -12,6 +12,7 @@ export type Node = {
     width: number;
     height: number;
   };
+  data?: object[]
 };
 
 export type ServiceConfig = {

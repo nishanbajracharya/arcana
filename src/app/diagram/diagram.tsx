@@ -26,7 +26,11 @@ const App = () => {
 
   const [serviceConfigList, setServiceConfigList] = useState<ServiceConfig[]>([]);
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [selectedService, setSelectedService] = useState<string>('');
   const [nodes, setNodes] = useState<Node[]>([]);
+  const [orchData, setOrchData] = useState<{name: String, id?: String, nodes?:Node[]}>({
+    name: "Flow",
+  });
   const grid = [];
   const gridSize = 30;
 
@@ -69,6 +73,23 @@ const App = () => {
     }
   };
 
+  const handleSave = async (selectedService: string) => {
+    const newNodes = nodes.map(node => node.name === selectedService ? {...node, data: serviceConfigList} : node);
+    setNodes(newNodes);
+
+    const newOrch = {
+      ...orchData,
+      nodes: newNodes
+    }
+    if(!newOrch.id) {
+      const {data} = await axios.post("/api/orchestra", newOrch)
+      newOrch.id = data.id
+    } else {
+      const response = await axios.put(`/api/orchestra/${orchData.id}`, newOrch)
+    }
+    setOrchData(newOrch);
+  }
+
   const handleServiceClick = (e: React.MouseEvent, name: string, displayName: string) => {
     const node: Node = {
       id: generateRandomString(8),
@@ -89,11 +110,12 @@ const App = () => {
 
 
   const handleServiceConfiguration = (serviceName: string) => {
-    axios.get('/api/services/ec2')
+    axios.get(`/api/services/${serviceName.toLowerCase()}`)
       .then(function (response) {
         // handle success
+        const selectedNode = nodes.find(node => node.name === serviceName);
         console.log(response.data);
-        setServiceConfigList(response.data.service)
+        setServiceConfigList(selectedNode?.data || response.data.service)
         setOpenModal(true)
       })
       .catch(function (error) {
@@ -107,13 +129,14 @@ const App = () => {
   }
 
   const handleServiceConfigValueChange = (fieldName : string, fieldValue : string) => {
-    serviceConfigList.forEach((config) => {
-      (config.name == fieldName)?
-        config.value = fieldValue
-      :null
+    const newConfig:ServiceConfig[] = serviceConfigList.map((config) => {
+      if (config.name === fieldName)
+        return {...config, value: fieldValue}
+      else 
+        return config
     })
-    setServiceConfigList(serviceConfigList)
-    console.log("service config list", serviceConfigList)
+    setServiceConfigList(newConfig)
+    console.log("service config list", newConfig)
   }
 
   return (
@@ -147,7 +170,10 @@ const App = () => {
                 onDragEnd={(e) => {
                   handleNodeDragEnd(node, e);
                 }}
-                onClick={(name)=> handleServiceConfiguration(name)}
+                onClick={(name)=> {
+                  handleServiceConfiguration(name)
+                  setSelectedService(name);
+                }}
               />
             ))}
           </Layer>
@@ -155,21 +181,24 @@ const App = () => {
       </div>
       <ConfigurationModal 
         isOpen={openModal}
-        title={"Test"}
+        title={selectedService}
+        onSave={()=>{
+          handleSave(selectedService);
+          setOpenModal(false);
+          setSelectedService("");
+        }}
         onOpenChange={(i) => console.log("on open change", i)}
         onClose={() => setOpenModal(false)}
       >
-        {serviceConfigList.map(config => {
-          return(
+        {serviceConfigList.map(config => (
             <FormInputView 
               label={config.label}
-              value={config.defaultValue}
+              value={config.value || config.defaultValue}
               inputType={config.componentType}
               onChange={(e) => handleServiceConfigValueChange(config.name, e.target.value)}
               placeholder={config.label}
             />
-          )
-        })}
+          ))}
       </ConfigurationModal>
     </div>
   );

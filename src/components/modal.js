@@ -1,7 +1,7 @@
 import React from 'react';
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 
-const ConfigurationModal = ({ isOpen, children, title, onOpenChange, onClose }) => {
+const ConfigurationModal = ({ isOpen, children, title, onOpenChange, onClose, onSave }) => {
   if (!isOpen) return null;
 
   return (
@@ -16,7 +16,7 @@ const ConfigurationModal = ({ isOpen, children, title, onOpenChange, onClose }) 
                 <Button color="danger" variant="light" onPress={onClose}>
                   Close
                 </Button>
-                <Button color="primary" onPress={onClose}>
+                <Button color="primary" onPress={onSave}>
                   Save
                 </Button>
               </ModalFooter>
