@@ -26,7 +26,7 @@ import { Link } from '@nextui-org/link';
 import axios from 'axios';
 import ServiceCost from '@/components/ServiceCost';
 
-const HEIGHT = window.innerHeight - 48;
+const HEIGHT = window.innerHeight - 64;
 const WIDTH = window.innerWidth - 360;
 
 const App = () => {
@@ -164,7 +164,7 @@ const App = () => {
 
   return (
     <div>
-      <header className="h-[48px] bg-[#efeff7] border-b-[1px] border-b-[#ddd] flex leading-[48px] px-[16px] justify-between">
+      <header className="h-[64px] bg-[#efeff7] border-b-[1px] border-b-[#ddd] flex leading-[64px] px-[16px] justify-between">
         <div>
           <Link href="/">
             <Button variant="faded" className="bg-white">
@@ -173,7 +173,7 @@ const App = () => {
             </Button>
           </Link>
         </div>
-        <strong>Diagram</strong>
+        <strong>Arcana</strong>
         <div>
           <Button color="primary" onPress={() => showPreview()}>
             <IoIosPlay />
