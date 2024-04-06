@@ -6,6 +6,7 @@ import { IoMdDownload } from "react-icons/io";
 import { GrDeploy } from "react-icons/gr";
 
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from "@nextui-org/react";
+import {Card, CardHeader, CardBody, CardFooter, Divider} from "@nextui-org/react";
 
 
 import { Button } from '@nextui-org/button';
@@ -231,8 +232,31 @@ const App = () => {
             <>
               <ModalHeader className="flex flex-col">Preview</ModalHeader>
               <ModalBody>
-                <div className="h-[70vh] overflow-y-auto">
-                  Preview
+                <div className="h-[70vh] overflow-y-auto flex flex-wrap">
+                  {nodes.map(node => {
+                    return <Card key={node.id} className="m-4 max-h-[300px] flex-1 min-w-[300px]">
+                      <CardHeader>
+                        <p>{node.displayName}</p>
+                      </CardHeader>
+                      <Divider />
+                      <CardBody>
+                        {node.data?.map((config, key) => {
+                          return <>
+                          <div key={key} className="flex justify-between py-2">
+                            <span>{config.label}</span>
+                            <span>{config.value}</span>
+                          </div>
+                          <Divider />
+                          </>
+                        }
+                      )}
+                      </CardBody>
+                      <Divider />
+                      <CardFooter>
+                        <span>Cost</span>
+                      </CardFooter>
+                    </Card>
+                  })}
                 </div>
               </ModalBody>
               <ModalFooter>
