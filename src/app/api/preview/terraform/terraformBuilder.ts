@@ -64,7 +64,6 @@ class TerraformBuilder {
       const terraformScript: string = await terraformGenerator.generateTerraformScript();
       await fs.writeFile(`${folderPath}/main.tf`, terraformScript, 'utf8');
 
-
     } catch (error) {
       console.log('Err', error);
     }

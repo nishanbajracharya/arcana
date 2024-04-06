@@ -125,6 +125,7 @@ useEffect(() => {
       const {data} = await axios.post("/api/orchestra", {
         orch: newOrch,
         nodeId: selectedServiceId,
+        nodeName: selectedService,
         nodeData: serviceConfigList
       })
       newOrch.id = data.id
@@ -132,6 +133,7 @@ useEffect(() => {
       const response = await axios.put(`/api/orchestra/${orchData.id}`, {
         orch: newOrch,
         nodeId: selectedServiceId,
+        nodeName: selectedService,
         nodeData: serviceConfigList
       })
     }

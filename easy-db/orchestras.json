@@ -1463,5 +1463,204 @@
 				]
 			}
 		]
+	},
+	"armWeQ6ZMnOv": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "VBmTtCsa",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "9OPTMWyf",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-iinst"
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"options": [
+							{
+								"value": "t2.micro",
+								"label": "t2.micro"
+							},
+							{
+								"value": "t2.small",
+								"label": "t2.small"
+							}
+						],
+						"value": "t2-micro"
+					}
+				]
+			}
+		]
+	},
+	"vylRFdFuE4Vy": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "bRU2nhMd",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "L73j60yB",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "test"
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"options": [
+							{
+								"value": "t2.micro",
+								"label": "t2.micro"
+							},
+							{
+								"value": "t2.small",
+								"label": "t2.small"
+							}
+						],
+						"value": "t2-micro"
+					}
+				]
+			}
+		],
+		"id": "vylRFdFuE4Vy"
+	},
+	"M5XxqG0O2gjf": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "0ifQQ3pv",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "jCgKS40k",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-ec2"
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"options": [
+							{
+								"value": "t2.micro",
+								"label": "t2.micro"
+							},
+							{
+								"value": "t2.small",
+								"label": "t2.small"
+							}
+						],
+						"value": "t2-micro"
+					}
+				]
+			}
+		]
 	}
 }

@@ -1,10 +1,11 @@
 {
-	"uCArwX2TlJ8g": {
-		"id": "c2VmwTAs",
+	"r6hrVWdKAMbY": {
+		"id": "jCgKS40k",
+		"moduleName": "EC2",
 		"data": {
 			"module": {
 				"name": "my-ec2",
-				"monitoring": "true",
+				"monitoring": true,
 				"instance_type": "t2.micro"
 			}
 		}

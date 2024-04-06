@@ -15,13 +15,13 @@ export async function GET (
 export async function PUT (
     req: NextRequest, { params }: { params: { id: string } }
 ) {
-    const {orch, nodeId, nodeData} = await req.json();
+    const {orch, nodeId, nodeName, nodeData} = await req.json();
     await update('orchestras', params.id, orch);
     const genAi = new GenAI();
     const terraformScript = await genAi.generateTerraform(nodeData);
     await update('terraforms', nodeId, {
         id: nodeId,
-        orchId: orch.id,
+        moduleName: nodeName,
         data: terraformScript,
       })
     return Response.json(orch);

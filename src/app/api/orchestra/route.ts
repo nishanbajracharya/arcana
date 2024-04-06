@@ -6,13 +6,14 @@ const { insert, select } = easyDB({});
 export async function POST(
   req: NextRequest,
 ) {
-  const {orch, nodeId, nodeData} = await req.json();
+  const {orch, nodeId, nodeName, nodeData} = await req.json();
   const id = await insert('orchestras', orch)
   const genAi = new GenAI();
   const terraformScript = await genAi.generateTerraform(nodeData);
   await insert('terraforms', {
     id: nodeId,
     orchId: orch.id,
+    moduleName: nodeName,
     data: terraformScript,
   })
 
