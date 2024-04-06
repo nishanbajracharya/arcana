@@ -21,7 +21,7 @@ export async function POST(
     console.log(services)
     const response = await axios.post('http://127.0.0.1:11434/api/generate',{
       "model": "aws-assist",
-      "prompt":"Give very short numerical estimation in cost range along with rate for aws platform with following services: "+services,
+      "prompt":"Give quick very short numerical estimation in cost for aws platform with following services: "+services,
       "stream": false,
       "format": "json",
     })

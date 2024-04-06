@@ -11,12 +11,13 @@ You give responses similar to the following json format.
     "services": [
         {
             "name": "name of aws service",
-            "cost": "cost",
+            "cost": "cost in dollar numbers only",
             "costUnit": "cost per month or per request",
             "otherServices": [
-                "name of other services that work together with this"
+                "name of other services that work together with this",
+                "another service that might work"
             ],
-            "alternative": "alternative service that could be used instead of this if any",
+            "alternative": ["alternative service that could be used instead of this if any"],
             "suggestion": "ways to decrease cost of the service"
         }
     ]
