@@ -1,8 +1,11 @@
-import Image from 'next/image';
+'use client';
+
 import Link from 'next/link';
 import { BsSearch } from 'react-icons/bs';
 import { GrAddCircle } from 'react-icons/gr';
 import { HiDotsHorizontal } from 'react-icons/hi';
+
+import { Button } from '@nextui-org/button';
 
 export default function Home() {
   return (
@@ -10,26 +13,23 @@ export default function Home() {
       <div className="bg-white p-4">
         <div className="flex flex-row justify-between items-center">
           <span className="text-black">Architectures</span>
-          <div className="flex flex-row justify-between items-center w-3/12">
-            <div className="flex flex-row justify-between items-center border-slate-950	border-2 p-1">
+          <div className="flex flex-row justify-between items-center">
+            {/* <div className="flex flex-row justify-between items-center border-slate-950 p-1">
               <BsSearch
                 size={24}
                 style={{
                   color: '#000000',
                 }}
               />
-              <input type="text" className="w-full h-6 p-2 text-black" />
-            </div>
+              <Input type="text" />
+            </div> */}
             <Link href="/diagram">
-              <button className="flex flex-row justify-between items-center bg-slate-300 p-2">
+              <Button variant="solid" color="primary">
                 <GrAddCircle
                   size={18}
-                  style={{
-                    color: '#000000',
-                  }}
                 />
-                <span className="text-black ml-2 text-sm">Create New</span>
-              </button>
+                <span>Create New</span>
+              </Button>
             </Link>
           </div>
         </div>
