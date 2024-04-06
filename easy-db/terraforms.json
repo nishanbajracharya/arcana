@@ -9,5 +9,14 @@
 				"instance_type": "t2.micro"
 			}
 		}
+	},
+	"qg8GCvel1dzj": {
+		"id": "b49qb1CC",
+		"moduleName": "EC2",
+		"data": {
+			"name": "my_ec2",
+			"monitoring": true,
+			"InstanceType": "t2.micro"
+		}
 	}
 }

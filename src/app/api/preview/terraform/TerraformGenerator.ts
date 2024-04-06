@@ -91,21 +91,23 @@ class TerraformGenerator {
       tfScript += `\n`; // Add an empty line before module declaration
     }
   
-    tfScript += `module "${moduleData.name}" {\n`;
-    tfScript += `  source = "./modules/${moduleData.name}/"\n`;
+    tfScript += `module "${moduleData.moduleName}" {\n`;
+    tfScript += `  source = "./modules/${moduleData.moduleName}/"\n`;
   
     // Loop through dynamic values and add them to the Terraform script
-    Object.entries(moduleData.values).forEach(([key, value]) => {
-      // Convert boolean values to string
-      const strValue = typeof value === 'boolean' ? String(value) : value;
-      tfScript += `  ${key} = "${strValue}"\n`;
-    });
+    if(moduleData?.data?.module) {
+      Object.entries(moduleData.data.module).forEach(([key, value]) => {
+        // Convert boolean values to string
+        const strValue = typeof value === 'boolean' ? String(value) : value;
+        tfScript += `  ${key} = "${strValue}"\n`;
+      });
+    }
   
     tfScript += `}\n`;
   
     return tfScript;
   }
-  
+
   public async generateTerraformScript(): Promise<string> {
     try {
       const terraformScript = await this.jsonToTerraform();

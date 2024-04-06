@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import TerraformGenerator, { TerraformData } from './TerraformGenerator';
+import TerraformDAO from './terraformDAO';
 const currentDirectory = process.cwd();
 
 interface Position {
@@ -25,6 +26,7 @@ class TerraformBuilder {
   canvasData:Array<AwsService> = [];
   projectName: string = '';
   folderPath: string = '';
+  terraformGenerator: TerraformGenerator;
 
   terraformData: TerraformData = {
     terraform: {
@@ -50,6 +52,8 @@ class TerraformBuilder {
     this.canvasData = canvasData;
     this.projectName = `terraform-bundle-${Date.now()}`;
     this.folderPath = `${currentDirectory}/../${this.projectName}`;;
+   this.terraformGenerator = new TerraformGenerator(this.terraformData);
+
   }
 
   createBaseRepo = async () => {
@@ -60,8 +64,7 @@ class TerraformBuilder {
       await fs.mkdir(`${folderPath}/modules`);
 
       await this.createModules();
-      const terraformGenerator = new TerraformGenerator(this.terraformData);
-      const terraformScript: string = await terraformGenerator.generateTerraformScript();
+      const terraformScript: string = await this.terraformGenerator.generateTerraformScript();
       await fs.writeFile(`${folderPath}/main.tf`, terraformScript, 'utf8');
 
     } catch (error) {
@@ -78,6 +81,8 @@ class TerraformBuilder {
       Amplify: { name: "Amplify", source: "./modules/Amplify/" }
   }
   const modules: any = [];
+  const terraformDao = new TerraformDAO();
+  await terraformDao.setTerraformDataFromDB();
   this.canvasData.forEach(async awsService => {
 
       switch(awsService.name) {
@@ -87,12 +92,23 @@ class TerraformBuilder {
           modules.push(moduleMapper['SG'])
 
           await this.createVpcModule(`${this.folderPath}/modules`, `${currentDirectory}/template/modules`);
+          const terraformNode = terraformDao.getTerraformDataById(awsService.id)
+          const terraformScript = this.terraformGenerator.generateModuleTerraformScript(terraformNode, false);
+          fs.writeFile(`${this.folderPath}/modules/vpc/main.tf`, terraformScript, 'utf8');
           break;
         }
         default: {
-          //@ts-ignore
-          const service = moduleMapper[awsService.name];
-          modules.push(service);
+          if(awsService.name !== 'PublicSubnet' || awsService.name !== 'PrivateSubnet') {
+            //@ts-ignore
+            const service = moduleMapper[awsService.name];
+            modules.push(service);
+            const pathName = `${this.folderPath}/modules`
+            await fs.mkdir(`${pathName}/${awsService.name}`);
+            const terraformNode = terraformDao.getTerraformDataById(awsService.id)
+            const withVar = awsService.name === 'EC2' ? true : false;
+            const terraformScript = this.terraformGenerator.generateModuleTerraformScript(terraformNode, withVar);
+            fs.writeFile(`${pathName}/${awsService.name}/main.tf`, terraformScript, 'utf8');
+          }
         }
       }
 

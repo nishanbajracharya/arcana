@@ -26,3 +26,5 @@ class TerraformDAO {
   }
 
 }
+
+export default TerraformDAO;

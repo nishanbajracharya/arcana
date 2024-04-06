@@ -1662,5 +1662,71 @@
 				]
 			}
 		]
+	},
+	"VFwpAZRy2Lf7": {
+		"name": "Flow",
+		"nodes": [
+			{
+				"id": "TsnjyPl5",
+				"name": "VPC",
+				"displayName": "VPC",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 960,
+					"height": 800
+				}
+			},
+			{
+				"id": "b49qb1CC",
+				"name": "EC2",
+				"displayName": "EC2",
+				"position": {
+					"x": 200,
+					"y": 300
+				},
+				"size": {
+					"width": 88,
+					"height": 88
+				},
+				"data": [
+					{
+						"name": "name",
+						"componentType": "text",
+						"label": "Name",
+						"defaultValue": "",
+						"required": false,
+						"value": "my-ec2"
+					},
+					{
+						"name": "monitoring",
+						"componentType": "checkbox",
+						"label": "Monitoring",
+						"defaultValue": "true",
+						"required": false
+					},
+					{
+						"name": "InstanceType",
+						"componentType": "text",
+						"label": "Instance Type",
+						"defaultValue": "",
+						"required": false,
+						"options": [
+							{
+								"value": "t2.micro",
+								"label": "t2.micro"
+							},
+							{
+								"value": "t2.small",
+								"label": "t2.small"
+							}
+						],
+						"value": "t2-micro"
+					}
+				]
+			}
+		]
 	}
 }
