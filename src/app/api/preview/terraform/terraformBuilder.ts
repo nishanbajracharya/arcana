@@ -77,9 +77,9 @@ class TerraformBuilder {
 
   createModules = async () => {
     const moduleMapper = {
-      VPC: { name: "VPC", source: "./modules/VPC/" },
-      SG: { name: "default-security-group", source: "./modules/security_group/", vpc_id: "module.vpc.vpc_id", vpc_cidr_block: "module.vpc.vpc_cidr_block" },
-      EC2: { name: "EC2", source: "./modules/EC2/", subnet_id: "module.vpc.public_subnet_id", security_group: "module.web_server_sg.security_group_id" },
+      VPC: { name: "vpc", source: "./modules/VPC/" },
+      SG: { name: "web_server_sg", source: "./modules/security_group/", vpc_id: "module.vpc.vpc_id", vpc_cidr_block: "module.vpc.vpc_cidr_block" },
+      EC2: { name: "ec2-instance", source: "./modules/EC2/", subnet_id: "module.vpc.public_subnet_id", security_group: "module.web_server_sg.security_group_id" },
       S3: { name: "S3", source: "./modules/S3/" },
       Amplify: { name: "Amplify", source: "./modules/Amplify/" }
   }

@@ -99,13 +99,6 @@
       "value": "terraform-aws-modules/vpc/aws"
     },
     {
-      "name": "region",
-      "componentType": "text",
-      "label": "Region",
-      "defaultValue": "",
-      "required": false
-    },
-    {
       "name": "azs",
       "componentType": "text",
       "label": "Availability Zone",

@@ -87,23 +87,49 @@ class TerraformGenerator {
   public generateModuleTerraformScript(moduleData: any, withVar: boolean): string {
     let tfScript = '';
 
-    if (withVar) {
+    if (withVar && moduleData.moduleName === 'EC2') {
       // Add variables at the top of the file
-      tfScript += `variable "region" {}\n`;
-      tfScript += `variable "bucket_name" {}\n`;
+      tfScript += `variable "subnet_id" {}\n`;
+      tfScript += `variable "security_group" {}\n`;
+      // Add more variables as needed
+      tfScript += `\n`; // Add an empty line before module declaration
+    }
+
+    if (withVar && moduleData.moduleName === 'web_server_sg') {
+      // Add variables at the top of the file
+      tfScript += `variable "vpc_id" {}\n`;
+      tfScript += `variable "vpc_cidr_block" {}\n`;
       // Add more variables as needed
       tfScript += `\n`; // Add an empty line before module declaration
     }
   
-    tfScript += `module "${moduleData.moduleName}" {\n`;
+    tfScript += `module "${moduleData.moduleName === 'EC2' ? 'ec2-instance' : moduleData.moduleName === 'VPC' ? 'vpc' : moduleData.moduleName}" {\n`;
   
     // Loop through dynamic values and add them to the Terraform script
     if(moduleData?.data?.module) {
       Object.entries(moduleData.data.module).forEach(([key, value]) => {
         // Convert boolean values to string
-        const strValue = typeof value === 'boolean' ? String(value) : value;
-        tfScript += `  ${key} = "${strValue}"\n`;
+        let strValue:any = `"${value}"`;
+        if(typeof value === 'boolean') {
+          strValue = Boolean(value)
+        }else if (Array.isArray(value)) {
+          strValue = JSON.stringify(value)
+        }
+        tfScript += `  ${key} = ${strValue}\n`;
       });
+    }
+
+    if(moduleData?.data?.data?.module) {
+      Object.entries(moduleData.data.data.module).forEach(([key, value]) => {
+        // Convert boolean values to string
+        const strValue = typeof value === 'boolean' ? Boolean(value) : `"${value}"`;
+        tfScript += `  ${key} = ${strValue}\n`;
+      });
+    }
+
+    if(moduleData.moduleName === 'EC2') {
+      tfScript += `vpc_security_group_ids =[var.security_group]\n`
+      tfScript += `subnet_id =var.subnet_id\n`
     }
   
     tfScript += `}\n`;

@@ -4,7 +4,7 @@ variable "vpc_cidr_block" {}
 module "web_server_sg" {
   source = "terraform-aws-modules/security-group/aws//modules/http-80"
 
-  name        = "web-server"
+  name        = "default-security-group"
   description = "Security group for web-server with HTTP ports open within VPC"
   vpc_id      = var.vpc_id
 
