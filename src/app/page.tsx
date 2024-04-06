@@ -6,6 +6,7 @@ import { GrAddCircle } from 'react-icons/gr';
 import { HiDotsHorizontal } from 'react-icons/hi';
 
 import { Button } from '@nextui-org/button';
+import { Card } from '@nextui-org/card';
 
 export default function Home() {
   return (
@@ -40,8 +41,12 @@ export default function Home() {
         </div>
       </div> */}
 
+
+        {/* <Card fullWidth>
+          My Card
+        </Card> */}
         <div className="mt-5">
-          <div className="flex flex-col justify-between border-slate-950 border-2 p-3 h-64 max-w-80">
+          <div className="flex flex-col justify-between border-slate-950 p-3 h-64 max-w-80">
             <div>
               <div className="flex flex-row justify-between items-center">
                 <span className="font-bold">Flow Continue</span>
