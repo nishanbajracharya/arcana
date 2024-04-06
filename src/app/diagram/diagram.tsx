@@ -8,17 +8,24 @@ import { IoIosPlay } from 'react-icons/io';
 
 import './diagram.css';
 
+
+import FormInputView from '../../components/formInputComponent';
+import ConfigurationModal from '../../components/modal';
 import ServicePane from '../../components/ServicePane';
 import NodeFactory from '../../components/NodeFactory';
 import { generateRandomString } from '../../utils/utils';
-import { Node } from '@/types';
+import { Node, ServiceConfig } from '@/types';
 import { Link } from '@nextui-org/link';
-// import axios from 'axios';
+import axios from 'axios';
+import { config } from 'process';
 
 const HEIGHT = window.innerHeight - 48;
 const WIDTH = window.innerWidth - 360;
 
 const App = () => {
+
+  const [serviceConfigList, setServiceConfigList] = useState<ServiceConfig[]>([]);
+  const [openModal, setOpenModal] = useState<boolean>(false);
   const [nodes, setNodes] = useState<Node[]>([]);
   const grid = [];
   const gridSize = 30;
@@ -80,6 +87,35 @@ const App = () => {
     console.log('Handle Drag End', node, e);
   };
 
+
+  const handleServiceConfiguration = (serviceName: string) => {
+    axios.get('/api/services/ec2')
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+        setServiceConfigList(response.data.service)
+        setOpenModal(true)
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      }
+    );
+  }
+
+  const handleServiceConfigValueChange = (fieldName : string, fieldValue : string) => {
+    serviceConfigList.forEach((config) => {
+      (config.name == fieldName)?
+        config.value = fieldValue
+      :null
+    })
+    setServiceConfigList(serviceConfigList)
+    console.log("service config list", serviceConfigList)
+  }
+
   return (
     <div>
       <header className="h-[48px] bg-[#efeff7] border-b-[1px] border-b-[#ddd] flex leading-[48px] px-[16px] justify-between">
@@ -111,11 +147,30 @@ const App = () => {
                 onDragEnd={(e) => {
                   handleNodeDragEnd(node, e);
                 }}
+                onClick={(name)=> handleServiceConfiguration(name)}
               />
             ))}
           </Layer>
         </Stage>
       </div>
+      <ConfigurationModal 
+        isOpen={openModal}
+        title={"Test"}
+        onOpenChange={(i) => console.log("on open change", i)}
+        onClose={() => setOpenModal(false)}
+      >
+        {serviceConfigList.map(config => {
+          return(
+            <FormInputView 
+              label={config.label}
+              value={config.defaultValue}
+              inputType={config.componentType}
+              onChange={(e) => handleServiceConfigValueChange(config.name, e.target.value)}
+              placeholder={config.label}
+            />
+          )
+        })}
+      </ConfigurationModal>
     </div>
   );
 };

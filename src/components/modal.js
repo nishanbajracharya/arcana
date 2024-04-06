@@ -1,18 +1,29 @@
 import React from 'react';
-import styles from './Modal.module.css'; // Import CSS for styling
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 
-const Modal = ({ isOpen, onClose, children, title }) => {
+const ConfigurationModal = ({ isOpen, children, title, onOpenChange, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className={styles.modalOverlay} onClick={onClose}>
-      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-        <div>{title}</div>
-        <span className={styles.closeButton} onClick={onClose}>×</span>
-        {children}
-      </div>
-    </div>
+    <Modal isOpen={isOpen} onOpenChange={onOpenChange} hideCloseButton={true}>
+        <ModalContent className="h-[70vh] overflow-y-auto">
+            <>
+              <ModalHeader className="flex flex-col gap-1">{title}</ModalHeader>
+              <ModalBody>
+                {children}
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Save
+                </Button>
+              </ModalFooter>
+            </>
+        </ModalContent>
+      </Modal>
   );
 };
 
-export default Modal;
+export default ConfigurationModal;
