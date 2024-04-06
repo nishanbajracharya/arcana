@@ -8,6 +8,8 @@ const url = "http://localhost:3000/api/orchestra";
 import {data} from './data';
 import Icon from "../Icon";
 
+import {Tooltip} from "@nextui-org/react";
+
 export const DiagramCard = () => {
 
   const [cards, setCards] = useState([]);
@@ -51,8 +53,8 @@ export const DiagramCard = () => {
       ) : (
         <div className="flex flex-row flex-wrap">
           {cards.map((card: any) => (
-            <Link href={{ pathname: "/diagram", query: {data: JSON.stringify(card)} }} key={card.id}>
-              <div className="m-5 min-w-[300px]" onClick={() => goToEdit(card)}>
+            <div className="m-5 min-w-[300px]" onClick={() => goToEdit(card)} key={card.id}>
+              <Link href={{ pathname: "/diagram", query: {data: JSON.stringify(card)} }}>
                 <div className="border-1 rounded border-slate-950 flex flex-col justify-between border-slate-950 p-3 h-64 max-w-80">
                   <div>
                     <div className="">
@@ -68,7 +70,7 @@ export const DiagramCard = () => {
                     <div className="mt-2 flex  justify-start">
                       {
                         card && card.nodes && card.nodes.map((node: any) => {
-                          return <Icon name={node.name} key={node} className="m-1" />
+                          return <Icon name={node.name} className="m-1" key={node}/>
                         })
                       }
                     </div>
@@ -76,8 +78,8 @@ export const DiagramCard = () => {
 
                   <div></div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
       )}
