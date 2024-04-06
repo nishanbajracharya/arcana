@@ -1,0 +1,10 @@
+.card {
+  max-width: 350px;
+  display: block;
+  border: 2px solid aliceblue;
+  margin: 10px;
+}
+
+.card-container {
+  display: flex;
+}

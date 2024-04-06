@@ -16,8 +16,11 @@ export default function Home() {
   return (
     <div>
       <div className="bg-white p-4">
-        <div className="flex flex-row justify-between items-center">
-          <span className="text-black">Architectures</span>
+        <div className="flex flex-row justify-between items-center header">
+          <span className="header-span">
+            <h1 className="text-black">Developers Can`t Name The Things</h1>
+            <span className="description">AWS visualization and helper</span>
+          </span>
           <div className="flex flex-row justify-between items-center">
             {/* <div className="flex flex-row justify-between items-center border-slate-950 p-1">
               <BsSearch
@@ -28,8 +31,8 @@ export default function Home() {
               />
               <Input type="text" />
             </div> */}
-            <Link href="/diagram">
-              <Button variant="solid" color="primary">
+            <Link href="/diagram" className='button'>
+              <Button variant="solid" color="primary" style={{height: '60px'}}>
                 <GrAddCircle
                   size={18}
                 />

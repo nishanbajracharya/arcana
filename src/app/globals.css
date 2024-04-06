@@ -46,6 +46,32 @@ code {
     monospace;
 }
 
+.header {
+  background: #1abc9c;
+  display: flex;
+  align-items: center;
+}
+
+.text-black {
+  padding: 60px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+.description {
+  padding: 60px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.button {
+  margin: 60px;
+}
+
+
 @-webkit-keyframes rotating /* Safari and Chrome */ {
   from {
     -webkit-transform: rotate(0deg);

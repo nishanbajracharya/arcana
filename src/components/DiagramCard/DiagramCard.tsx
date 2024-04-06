@@ -6,6 +6,7 @@ import axios from "axios";
 
 const url = "http://localhost:3000/api/orchestra";
 import {data} from './data';
+import './DiagramCard.css';
 
 export const DiagramCard = () => {
 
@@ -40,14 +41,14 @@ export const DiagramCard = () => {
       {isLoading ? (
         <Loader></Loader>
       ) : (
-        <div>
+        <div className="card-container">
           {cards.map((card: any) => (
-            <Link href={{ pathname: "/diagram", query: {data: JSON.stringify(card)} }} key={card.id}>
+            <Link href={{ pathname: "/diagram", query: {data: JSON.stringify(card)} }} key={card.id} className="card">
               <div className="mt-5" onClick={() => goToEdit(card)}>
                 <div className="flex flex-col justify-between border-slate-950 p-3 h-64 max-w-80">
                   <div>
                     <div className="flex flex-row justify-between items-center">
-                      <span className="font-bold">Flow Continue</span>
+                      <span className="font-bold">{card.name}</span>
                       <HiDotsHorizontal
                         size={24}
                         style={{
