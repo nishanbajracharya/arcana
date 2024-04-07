@@ -203,6 +203,12 @@ useEffect(() => {
 
   }
 
+  const deployArchitecture = async () => {
+    // setPreview(false)
+    const response = await axios.post(`/api/deploy`, {
+    })
+  }
+
   return (
     <div>
       <header className="h-[64px] bg-[#efeff7] border-b-[1px] border-b-[#ddd] flex leading-[64px] px-[16px] justify-between">
@@ -316,7 +322,7 @@ useEffect(() => {
                 }} className="border-primary">
                   <IoMdDownload /> <span>Download</span>
                 </Button>
-                <Button color="primary" onPress={() => setPreview(false)}>
+                <Button color="primary" onPress={deployArchitecture}>
                   <GrDeploy /><span>Deploy</span>
                 </Button>
               </ModalFooter>

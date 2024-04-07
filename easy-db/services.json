@@ -52,7 +52,7 @@
       "name": "description",
       "componentType": "text",
       "label": "Description",
-      "defaultValue": "",
+      "defaultValue": "Test Amplify App",
       "required": false
     },
     {
@@ -66,7 +66,7 @@
       "name": "repository",
       "componentType": "text",
       "label": "Repository",
-      "defaultValue": "",
+      "defaultValue": "https://github.com/cloudposse/amplify-test2",
       "required": false
     },
     {
@@ -124,7 +124,7 @@
       "name": "private_subnets",
       "componentType": "text",
       "label": "Public Subnet",
-      "defaultValue": "10.1.0.0/24",
+      "defaultValue": "10.0.1.0/24",
       "required": false,
       "isArray": true
     },
@@ -132,7 +132,7 @@
       "name": "public_subnets",
       "componentType": "text",
       "label": "Private Subnet",
-      "defaultValue": "10.2.0.0/24",
+      "defaultValue": "10.0.101.0/24",
       "required": false,
       "isArray": true
     },
