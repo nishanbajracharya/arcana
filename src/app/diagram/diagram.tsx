@@ -5,6 +5,8 @@ import { KonvaEventObject } from 'konva/lib/Node';
 import { IoMdDownload } from "react-icons/io";
 import { GrDeploy } from "react-icons/gr";
 
+import { RiLoader4Line } from 'react-icons/ri';
+
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from "@nextui-org/react";
 import {Card, CardHeader, CardBody, CardFooter, Divider} from "@nextui-org/react";
 
@@ -35,6 +37,8 @@ const App = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [selectedService, setSelectedService] = useState<string>('');
   const [selectedServiceId, setSelectedServiceId] = useState<string>('');
+  const [deploying, setDeploying] = useState(false);
+  const [deployOpen, setDeployOpen] = useState(false);
   
   const getQueryParams = (query:any) => {
     return query
@@ -205,8 +209,13 @@ useEffect(() => {
 
   const deployArchitecture = async () => {
     // setPreview(false)
+    setDeploying(true);
     const response = await axios.post(`/api/deploy`, {
     })
+    setPreview(false)
+
+    setDeployOpen(true);
+    setDeploying(false);
   }
 
   return (
@@ -307,10 +316,14 @@ useEffect(() => {
                 </div>
               </ModalBody>
               <ModalFooter>
-                <Button color="danger" variant="light" onPress={() => setPreview(false)} className="mr-auto">
+                <Button color="danger" variant="light" onPress={() => {
+                  setDeploying(false)
+                  setPreview(false)
+                }} className="mr-auto">
                   <span>Cancel</span>
                 </Button>
-                <Button color="primary" variant="light" onPress={async () => {setPreview(false)
+                <Button color="primary" variant="light" onPress={async () => {
+                  setPreview(false)
                   const response = await fetch('/api/download')
                   const blob = await response.blob();
                   const url = window.URL.createObjectURL(blob);
@@ -322,8 +335,26 @@ useEffect(() => {
                 }} className="border-primary">
                   <IoMdDownload /> <span>Download</span>
                 </Button>
-                <Button color="primary" onPress={deployArchitecture}>
-                  <GrDeploy /><span>Deploy</span>
+                <Button color="primary" onPress={deployArchitecture} disabled={deploying}>
+                  {deploying ? <RiLoader4Line className="rotating" /> : <GrDeploy />} <span>Deploy</span>
+                </Button>
+              </ModalFooter>
+            </>
+        </ModalContent>
+      </Modal>
+      <Modal isOpen={deployOpen} onOpenChange={() => null} hideCloseButton>
+        <ModalContent>
+            <>
+              <ModalHeader>Deployment Status</ModalHeader>
+              <ModalBody>
+                <div className="overflow-y-auto flex flex-wrap">
+                  <p>Successfully deployed. Please visit your AWS console to verify.</p>
+                  <p><Link isExternal href="https://console.aws.amazon.com">Link to AWS Console</Link></p>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="primary" onPress={() => setDeployOpen(false)}>
+                  <span>Close</span>
                 </Button>
               </ModalFooter>
             </>
