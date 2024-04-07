@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+<img alt="Arcana" src="src/assets/icon.png" height="200" />
+</p>
+
+# Arcana
+A no code infrastructure orchestration platform to simplify the process of infrastructure deployment. We provide a visual interface where developers can drag, drop, and configure various AWS services and deploy these services directly into AWS using terraform scripts.
 
 ## Getting Started
 
@@ -18,19 +23,33 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Generative AI setup
+We use `ollama` to run our generative AI models locally. We've provided two `Modelfiles` with different prompts based on our needs.
 
-## Learn More
+### aws-assist
+We've build this on top of `mistral`. We use this model to calculate our AWS service cost along with any suggestions of cost reduction. Our system prompt looks like so:
+```
+You are a quick AWS assistent who gives advice on AWS services cost and provide suggestion for cost reduction. You can also give suggestion about what other AWS services can be used together.
+You give responses similar to the following json format.
+{
+    "services": [
+        {
+            "name": "name of aws service",
+            "cost": "cost in dollar numbers only",
+            "costUnit": "cost per month or per request",
+            "otherServices": [
+                "name of other services that work together with this",
+                "another service that might work"
+            ],
+            "alternative": ["alternative service that could be used instead of this if any"],
+            "suggestion": "ways to decrease cost of the service"
+        }
+    ]
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### terraform-builder
+This model is build on top of `codellama:7b` and is used to generate our terraform scripts based on the aws service configuration we provide in `json` format.
+```
+You are a terraform script builder. You are given a json input with aws configuration for a service. Your task is to build the terraform script using terraform aws modules. Only generate the module section, don't use variables, assign the exact values for each field. Do not add any additional fields or wrap the details in data field the payload structure should be as defined in the JSON. don't generate the provider.
+```
